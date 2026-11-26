@@ -167,7 +167,7 @@ function loadEntry({ file, dir, collection, config, site, overrides }) {
     sourceFile: path.relative(ROOT, path.join(dir, file)),
     slug,
     url,
-    absoluteUrl: `${site.url.replace(/\/$/, '')}${url.replace(/\.html$/, '')}`,
+    absoluteUrl: `${site.url.replace(/\/$/, '')}${url}`,
     layout: data.layout || config.layout,
     title: data.title || slug,
     description: data.description || excerpt(body),

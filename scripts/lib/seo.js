@@ -157,7 +157,7 @@ export function pageSeo(page, site) {
     imageAlt: str(page.ogImageAlt),
     canonical,
     canonicalElsewhere: canonical !== page.absoluteUrl,
-    robots: page.noindex === true ? 'noindex, follow' : 'index, follow, max-image-preview:large',
+    robots: page.noindex === true ? 'noindex, follow' : '',
     type: page.date ? 'article' : 'website',
     published: page.date ? new Date(page.date).toISOString() : '',
     keyword: str(page.focusKeyword),
