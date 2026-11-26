@@ -214,6 +214,7 @@ the search index all update on the next build. Nothing else needs touching.
 | Page shell, meta tags, schema | `templates/partials/base.html` (renders `page.seo`), `scripts/lib/seo.js`, `scripts/lib/schema.js` |
 | The "page not found" page | `templates/partials/not-found.html`, which `build.js` builds as `404.html` (GitHub Pages serves it for any missing address). A page of the site's own at `url: /404.html` replaces it. Either way the page gets `notFound: true`; it isn't in the sitemap, the search index or `check.js`'s pages |
 | Visit counting | `site.config.json` → `analytics` (`endpoint`, `key`), written by the Twinstack web app when the owner turns analytics on; `base.html` then loads `assets/js/analytics.js`. Cookieless: it sends the path (without the base path), the outside referrer's host, `utm_source`/`utm_medium`/`utm_campaign`, the screen width and the time zone, plus clicks on phone, email, WhatsApp and outside links. It sends nothing on localhost, with Do Not Track or Global Privacy Control, or after `?twinstack-analytics=off`. The web app detects support by `site.analytics.key` in `base.html` and reads the event fields (`t`, `p`, `nf`, `r`, `us`, `um`, `uc`, `w`, `tz`, `k`, `h`), so keep them in step |
+| Site agent (the chat helper in the page's corner) | `site.config.json` → `agent` (`endpoint`, `key`, `name`, `greeting`, and when set `remember` (days), `consent: "banner"`, `color`, `position`, `icon`, `iconImage`, `label`; `base.html` passes each as a `data-` attribute, with `site.brand.logoMark` as `data-logo`). While it has a key, `build.js` also writes `agent-index.json`: every page's visible text from its rendered main part (`lib/agent-index.js`, `AGENT_TEXT_MAX`), which the web app's agent answers from, written by the Twinstack web app when the owner turns the site agent on; `base.html` then loads `assets/js/agent.js`. Dependency-free, in a shadow root (keyboard reachable, Esc closes, respects `prefers-reduced-motion`, lifts itself above a cookie or consent banner fixed to the bottom, takes `--color-brand`). It posts `text/plain` JSON batches to `<endpoint>/<key>/events` (`s` session id from sessionStorage, `p` path without the base path, `w` width, `e` events: `v` page view, `h` hover with `l` label, `u` link (site path, `ext:<host>`, `tel`, `mail`), `x` kind and `d` ms, `c` click, `s` scroll %, `t` seconds, `x` leaving), sends a link or button's rest while the pointer is still on it (slipping off its edge for under 0.3 s, `SLIP_MS`, doesn't end the rest) (at 0.4, 1.5 and 2.5 s, `CHECKPOINTS`, each only what's new) and a batch held back by one in flight as soon as it returns, shows a suggestion the answer may carry, reports `accepted`/`dismissed`/`ignored` to `/outcome` and sends typed questions to `/ask`. Never reads form fields, form values or other page text; with Do Not Track or Global Privacy Control it only sends questions. The web app detects support by `site.agent.key` in `base.html` and reads those fields (`server/src/site-agent-rules.js`), so keep them in step |
 | Other services' code (Google Analytics, a chat widget) | `content/data/scripts.json` → `items`: `name`, `code`, `place` (`head`, or `body`: the end of the page), `pages` (`"all"`, which includes the 404 page, or a list of addresses), `on`. `pageScripts` in `lib/content.js` picks a page's code and `build.js` hands it to `base.html` as `customHead`/`customBody`, only for a published build: `--drafts` and `--proposal` builds (the web app's previews) leave it out. `check.js` errors on a script with an unclosed tag and warns about an address that isn't a published page. The Twinstack web app edits the file on its Custom code screen and detects support by `customHead` in `base.html`. Pages kept as they are in `static/` don't go through `base.html`, so they don't get these |
 | Title format, X handle, search console verification | `site.config.json` → `seo` (see "Search engine optimisation" below) |
 | A page's structure | The page's own body. Old copies' per-type layouts in `templates/layouts/` |
@@ -701,6 +702,12 @@ too. The proposal carries both partials, the CSS and the scripts in `"files"`; t
 allows the partials only with `data-designed="copied"`, detects support by the literal
 `--with-header`, and puts the standard ones back with its header and footer installer.
 
+How the header and footer are found and shared (`chromeKind`/`CHROME_TOKEN` in `html-source.js`, `buildChrome`/`chromeKey`/`ownChrome` in `edit-page.js`):
+- An outer box is part of the header or footer it holds (`#header-outer`, `.footer-wrap`, `site-footer-container`), so none stays behind as an empty bar or a second footer. A theme's slide-out or off-canvas panel (`#slide-out-widget-area`, `.offcanvas-nav`, `.side-drawer`) is taken whole, so its menu stays hidden until opened. Page numbers under a list of posts stay with the page.
+- Boxes the header sat in give the part's own wrapper their classes, ids (as `imp-id-<id>` classes, `wrapperIdClass`) and data attributes, per part, never the other part's. A box the page's content sits in too (a theme's page-wide wrapper, `shared` in `ancestorsAt`'s results) only passes styles down, like `<body>`: its z-index or size never reaches the header.
+- Rules for a part's own ids also apply when a theme's script moves the element into the page (`alsoIn`).
+- Pages share the site's header and footer when a visitor sees the same thing (`chromeKey`): the same words, links (however the address is written) and pictures (at any size). Which menu item is marked current, per-page classes and leftover attributes don't count. The shared menu marks the page being shown itself.
+
 `--keep-sidebars` (keeping styles) keeps the page's own breadcrumbs and sidebars (`keepPageParts` in
 `cleanHtml`): the Twinstack web app passes it for pages of a copied website ("Copy a website"), whose
 sidebar is part of the design being copied. They still never become the site's header or footer. The
@@ -906,7 +913,12 @@ so they suit both.
 No design system. Pages use any Tailwind utilities (stock palette and arbitrary
 values included) and, when needed, their own `<style>` block scoped to the
 page. `styles/main.css` holds only the font, the `brand` accent, a small base
-layer, `.table-scroll` and the reduced-motion rule. Details in
+layer (including phone guards: long words wrap, embeds and code blocks stay in
+their column, `#main` clips sideways overflow, and below 40rem grid children
+may shrink), `.table-scroll` and the reduced-motion rule. `assets/js/site.js`
+wraps a table in `<main>` that's wider than its column in `.table-scroll`.
+`scripts/lib/responsive-check.js` warns (never refuses) when a page edit adds
+fixed widths, columns or text sizes that don't fit a phone. Details in
 `TAILWIND-GUIDELINES.md`.
 
 ## Style

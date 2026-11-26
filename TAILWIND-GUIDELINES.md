@@ -47,7 +47,15 @@ Only what every page needs, nothing that decides how a page looks:
   footer use both. Change them to rebrand the site.
 - A small base layer: smooth scrolling, the body's default text colour and a
   visible focus outline.
-- `.table-scroll`, which the markdown renderer wraps tables in.
+- Phone guards in the base layer: long words and URLs wrap
+  (`overflow-wrap: break-word`), iframes and embeds never exceed their column,
+  `pre` scrolls by itself, `#main` clips anything sticking out sideways
+  (`overflow-x: clip`), and below 40rem a `.grid`'s children may shrink
+  (`min-width: 0`). Page utilities still override them. They soften mistakes;
+  they don't replace writing the page mobile first.
+- `.table-scroll`, which the markdown renderer wraps tables in (and
+  `assets/js/site.js` wraps any other table in `<main>` that's wider than its
+  column).
 - A reduced-motion rule that turns animations and transitions off for people
   who ask their system for less motion.
 

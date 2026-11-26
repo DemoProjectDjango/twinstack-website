@@ -34,6 +34,21 @@
 
   body {
     @apply bg-white text-zinc-700 antialiased;
+    /* A word or address longer than the line (a URL, an email) breaks
+       instead of pushing the page sideways. Only words that don't fit. */
+    overflow-wrap: break-word;
+  }
+
+  /* Embeds (a map, a video) never grow wider than their column; images and
+     videos already don't (Tailwind's preflight). Code blocks scroll by
+     themselves. */
+  iframe, embed, object {
+    max-width: 100%;
+  }
+
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   :focus-visible {
@@ -42,9 +57,29 @@
 }
 
 /* Markdown tables are wrapped in .table-scroll by the renderer, so a wide one
-   scrolls instead of pushing the page sideways on a phone. */
+   scrolls instead of pushing the page sideways on a phone. site.js wraps any
+   other table in <main> that's wider than its column the same way. */
 .table-scroll {
   overflow-x: auto;
+}
+
+/* Nothing in a page's body makes the whole page scroll sideways on a phone:
+   a decorative glow placed past the edge, a box a little too wide. clip, not
+   hidden, so nothing becomes a scroll box and sticky elements keep working;
+   browsers without it ignore the rule. On a phone a grid's column also stops
+   growing to fit one wide thing in it (a row of buttons that doesn't wrap),
+   which would push the text beside it past the edge too. Both sit in the base
+   layer, so a page's own utilities (min-w-…) still win. */
+@layer base {
+  #main {
+    overflow-x: clip;
+  }
+
+  @media (width < 40rem) {
+    :where(#main .grid) > * {
+      min-width: 0;
+    }
+  }
 }
 
 /* Pages may animate; people who ask their system for less motion get none. */

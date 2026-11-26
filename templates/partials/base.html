@@ -53,6 +53,7 @@
 {{# each page.scripts }}{{# unless head }}<script src="{{ src }}"{{# if module }} type="module"{{/ if }}{{# if nomodule }} nomodule{{/ if }}{{# if defer }} defer{{/ if }}{{# if async }} async{{/ if }}></script>{{/ unless }}{{/ each }}{{/ if }}
 <script src="/assets/js/site.js" defer></script>
 {{# if site.analytics.key }}<script src="/assets/js/analytics.js" data-endpoint="{{ site.analytics.endpoint }}" data-key="{{ site.analytics.key }}"{{# if page.notFound }} data-not-found{{/ if }} defer></script>{{/ if }}
+{{# if site.agent.key }}<script src="/assets/js/agent.js" data-endpoint="{{ site.agent.endpoint }}" data-key="{{ site.agent.key }}" data-name="{{ site.agent.name }}" data-greeting="{{ site.agent.greeting }}"{{# if site.agent.remember }} data-remember="{{ site.agent.remember }}"{{/ if }}{{# if site.agent.consent }} data-remember-consent="{{ site.agent.consent }}"{{/ if }}{{# if site.agent.color }} data-color="{{ site.agent.color }}"{{/ if }}{{# if site.agent.position }} data-position="{{ site.agent.position }}"{{/ if }}{{# if site.agent.icon }} data-icon="{{ site.agent.icon }}"{{/ if }}{{# if site.agent.iconImage }} data-icon-image="{{ site.agent.iconImage }}"{{/ if }}{{# if site.agent.label }} data-label="{{ site.agent.label }}"{{/ if }}{{# if site.agent.animation }} data-animation="{{ site.agent.animation }}"{{/ if }}{{# if site.brand.logoMark }} data-logo="{{ site.brand.logoMark }}"{{/ if }} defer></script>{{/ if }}
 {{{ customBody }}}
 </body>
 </html>

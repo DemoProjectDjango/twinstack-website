@@ -17,6 +17,7 @@ import { renderMarkdown, excerpt } from './lib/markdown.js';
 import { buildJsonLd } from './lib/schema.js';
 import { pageSeo, seoSettings } from './lib/seo.js';
 import { buildCss } from './lib/css.js';
+import { visibleText } from './lib/agent-index.js';
 
 const argv = process.argv.slice(2);
 const args = new Set(argv);
@@ -199,6 +200,9 @@ function build() {
 
   const written = [];
   const searchIndex = [];
+  // The site agent reads every page's whole text (lib/agent-index.js), only when it's on.
+  const agentIndex = site.agent?.key ? [] : null;
+  let lastMain = '';
 
   const lists = Object.fromEntries(
     Object.entries(collections).map(([name, entries]) => [name, entries.map(pick)]),
@@ -277,6 +281,7 @@ function build() {
     context.page = { ...page, content: rerendered.html, headings: rerendered.headings };
 
     const main = engine.render(layoutName, context);
+    lastMain = main;
     const html = engine.render('base', {
       ...context,
       main,
@@ -304,6 +309,9 @@ function build() {
         tags: entry.tags,
         text: excerpt(entry.body, 400),
       });
+      if (agentIndex && !entry.notFound) {
+        agentIndex.push({ title: entry.title, url: entry.url, description: entry.description, text: visibleText(lastMain) });
+      }
     }
   }
 
@@ -354,6 +362,7 @@ function build() {
 
   write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`);
   write('search-index.json', JSON.stringify(searchIndex));
+  if (agentIndex) write('agent-index.json', JSON.stringify(agentIndex));
 
   // Only when this build is for that domain: a copy published on github.io
   // must not claim the template's domain.

@@ -14,7 +14,7 @@ import { parseFrontmatter } from './markdown.js';
 
 /** Always sent: what Claude may use, what good looks like, and how it must behave on every screen. */
 export const DESIGN_RULES = `DESIGN — you are the designer
-There is no design system to follow. Design this page the way an excellent web designer would: modern, polished and clearly made for this business, never a generic template.
+There is no design system to follow. Design this page the way an excellent web designer would: modern, polished and clearly made for this business, never a generic template. Unless you're given a design reference to follow, never imitate another website's design: give it one clear visual idea of its own and make it better than what the business's competitors have.
 
 What you can use
 - Tailwind CSS v4 utilities, any of them: the stock palette (zinc, stone, neutral, slate, emerald…), arbitrary values (bg-[#0c2b25], text-[clamp(2.5rem,6vw,4.75rem)], grid-cols-[1.2fr_0.8fr]), gradients (bg-linear-to-br, bg-radial, from-*/via-*/to-*), shadows and coloured shadows, rings, blur and backdrop filters, transforms, transitions and animations. Tailwind only sees class names written out in full in the HTML, so never assemble one from pieces.
@@ -36,7 +36,11 @@ Every screen size
 - Each section has an inner container with a side gutter, e.g. "mx-auto max-w-7xl px-5 sm:px-8" (narrower, such as max-w-3xl, for reading text).
 - Columns stack on small screens and only split from md: or lg: up, e.g. "grid gap-6 md:grid-cols-2 lg:grid-cols-3". Never a fixed multi-column grid without a breakpoint.
 - No fixed pixel widths or heights for boxes: use w-full, max-w-*, aspect-* and let text wrap. Images get "h-auto max-w-full" (or w-full object-cover inside an aspect box), with width and height attributes where known.
-- A table goes inside <div class="overflow-x-auto">; long words and URLs get "wrap-break-word".
+- A table goes inside <div class="overflow-x-auto">; long words and URLs get "wrap-break-word". A code block gets overflow-x-auto; a map or video embed gets "w-full" (with an aspect-* box), never a width attribute wider than a phone.
+- Headings scale with the screen: a base size a phone can hold (text-4xl or a clamp() whose minimum is at most 2.75rem), larger only from sm:/md:/lg: up. Never join words with &nbsp; or whitespace-nowrap in a heading or a long label.
+- Rows of buttons, tags or links wrap: "flex flex-wrap gap-3" (or stack with flex-col sm:flex-row), never a nowrap row that runs off a phone's screen.
+- Decorative shapes, glows and images placed past a section's edge (-right-40, a 600px blurred circle) sit inside a section with "relative overflow-hidden", so nothing pokes out sideways.
+- A flex or grid child holding long text or a wide element gets "min-w-0" so it can shrink instead of widening the row.
 - Things people tap are comfortably large on phones (at least 44px high); body text stays at least 16px.
 - Accessible: text meets WCAG AA contrast on its background, headings go in order, every image has alt text, and focus stays visible.`;
 

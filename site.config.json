@@ -105,7 +105,8 @@
   },
   "updates": {
     "migrations": [
-      "0001-contact-phone-address-hours"
+      "0001-contact-phone-address-hours",
+      "0002-footer-sitemap-link"
     ]
   },
   "analytics": {

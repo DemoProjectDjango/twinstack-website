@@ -106,11 +106,13 @@ import { PAGE_MAX_TOKENS, bannedPhraseWarnings, requestClaude, resolveImages, st
 import { knowledgePrompt, recordWork, summarizeChange } from './lib/knowledge.js';
 import { BLANK_LAYOUT_RULES, DESIGN_RULES, isDesigned, layoutShowsTitle, styleReference } from './lib/design-rules.js';
 import { addSearchText } from './lib/search-text.js';
+import { responsiveWarnings } from './lib/responsive-check.js';
 import { CHROME_RULES, COPIED_MARK, DESIGNED_MARK, FOOTER_FILE, HEADER_FILE, chromeChecks, chromeData, readChromeReply } from './lib/chrome.js';
 import {
   MAX_CLEAN_CHARS,
   asRawBlock,
   bodyAttributes,
+  rootAttributes,
   cleanHtml,
   presentationalHints,
   htmlImages,
@@ -125,7 +127,7 @@ import {
   svgDefinitions,
   visibleText,
 } from './lib/html-source.js';
-import { detectReveal, scaleInlineRem, scopeCss } from './lib/css-scope.js';
+import { detectReveal, mentionedNames, scaleInlineRem, scopeCss, wrapperIdClass } from './lib/css-scope.js';
 import { globalStylesheets } from './lib/scaffold-tree-runner.js';
 
 const COMMANDS_PATH = path.join(ROOT, 'scripts/page-commands.json');
@@ -155,8 +157,10 @@ const positional = argv.filter((a) => !a.startsWith('--'));
 const dryRun = Boolean(flag('dry-run'));
 const generateFlag = Boolean(flag('generate'));
 const imageArgs = argv.filter((a) => a.startsWith('--image=')).map((a) => a.slice('--image='.length));
-// Screenshots of a design to replicate (--reference=<file>, repeatable, at most 2): shown to Claude
-// as the look to build, never placed on the page. The Twinstack web app keeps them inside .git.
+// Screenshots of a design to replicate (--reference=<file>, repeatable, at most MAX_REFERENCES):
+// shown to Claude as the look to build, never placed on the page. The Twinstack web app keeps them
+// inside .git. Several come from one long page (its top, its sections) or a video's frames.
+const MAX_REFERENCES = 6;
 const referenceArgs = argv.filter((a) => a.startsWith('--reference=')).map((a) => a.slice('--reference='.length));
 const proposalOut = flag('proposal-out');
 const fromHtml = flag('from-html');
@@ -531,6 +535,7 @@ function readPageEditReply(text, relFile, original, sources) {
   if (raw !== original) {
     const checked = editChecks(original, raw, true);
     problems.push(...checked.problems, ...frontmatterProblems(original, raw));
+    warnings.push(...checked.warnings);
   }
   // A section must name a partial that exists.
   const known = new Set(partialNames());
@@ -823,18 +828,23 @@ function keptScripts(html, jsFiles, relFile, base = null) {
       keep(script, src, null);
       continue;
     }
-    const base = path.posix.basename(src.split(/[?#]/)[0]).toLowerCase();
-    const upload = uploads.find((u) => !used.has(u) && path.posix.basename(u.file).toLowerCase() === base);
+    const fileName = path.posix.basename(src.split(/[?#]/)[0]).toLowerCase();
+    const upload = uploads.find((u) => !used.has(u) && path.posix.basename(u.file).toLowerCase() === fileName);
     if (upload) {
       used.add(upload);
-      const file = `${dir}/${base.replace(/[^a-z0-9._-]+/g, '-')}`;
+      const file = `${dir}/${fileName.replace(/[^a-z0-9._-]+/g, '-')}`;
       files.push({ file, content: upload.code });
       keep(script, `/${file}`, upload.code);
       continue;
     }
+    // One of the site's own files: in the repo, or in static/ (published at the root: a website
+    // uploaded as a zip keeps its files there).
     const local = siteImage(src);
-    const published = local ? null : absoluteUrl(src, base);
-    if (local) keep(script, local, fs.readFileSync(path.join(ROOT, local.slice(1)), 'utf8'));
+    const localFile = local && local.startsWith('/')
+      ? [path.join(ROOT, local.slice(1)), path.join(ROOT, 'static', local.slice(1))].find((f) => fs.existsSync(f) && fs.statSync(f).isFile())
+      : null;
+    const published = localFile ? null : absoluteUrl(src, base);
+    if (localFile) keep(script, local, fs.readFileSync(localFile, 'utf8'));
     // Still on the old site, where the page was published: loaded from there.
     else if (published) {
       keep(script, published, null);
@@ -854,7 +864,34 @@ function importedStylesheet(relFile) {
 
 const IMPORT_SCOPE = 'imported-page';
 const IMPORT_PREFIX = 'imp-';
-const MAX_IMPORTED_CSS = 600 * 1024;
+// A converted page's stylesheet: over SOFT_IMPORTED_CSS, rules for classes the page never names are
+// left out too (big themes and frameworks); over MAX_IMPORTED_CSS even then, only rules for what is
+// in the markup stay. Whatever is left comes in (with a note): a heavy site never fails here.
+const SOFT_IMPORTED_CSS = 600 * 1024;
+const MAX_IMPORTED_CSS = 1536 * 1024;
+
+/**
+ * Scopes a page's (or its header and footer's) stylesheets, trimming harder while they're too big:
+ * first everything a script might use, then only classes the page or its scripts name, then only
+ * what is in the markup. Returns the scoped CSS and notes for the owner.
+ */
+function scopeFitting(sheets, options, texts, what) {
+  let scoped = scopeCss(sheets, options);
+  const notes = [];
+  const kb = (n) => Math.round(n / 1024);
+  if (scoped.css.length > SOFT_IMPORTED_CSS && options.scripted) {
+    const before = scoped.css.length;
+    scoped = scopeCss(sheets, { ...options, mentioned: mentionedNames(texts) });
+    notes.push(`${what} CSS was ${kb(before)} KB, so rules for classes the page never names were left out (now ${kb(scoped.css.length)} KB). If something a script switches on looks unstyled, convert the page again with its script files uploaded`);
+  }
+  if (scoped.css.length > MAX_IMPORTED_CSS && options.scripted) {
+    const before = scoped.css.length;
+    scoped = scopeCss(sheets, { ...options, scripted: false });
+    notes.push(`${what} CSS was still ${kb(before)} KB, so only rules for what is on the page were kept (now ${kb(scoped.css.length)} KB): effects a script adds later may look plain`);
+  }
+  if (scoped.css.length > MAX_IMPORTED_CSS) notes.push(`${what} CSS is ${kb(scoped.css.length)} KB, which makes the page slower to load`);
+  return { scoped, notes };
+}
 // Web-font services whose stylesheets only declare fonts, so the page loads them as they are.
 const FONT_STYLESHEET = /^(https?:)?\/\/(fonts\.googleapis\.com|fonts\.bunny\.net|use\.typekit\.net|api\.fontshare\.com)\//i;
 
@@ -967,6 +1004,20 @@ async function remoteSheets(html, uploads, globals, base) {
   const wanted = stylesheetsIn(html).filter((s) => s.href && !FONT_STYLESHEET.test(s.href) && !covered.has(sheetName(s.href)));
   const sheets = new Map();
   await Promise.all(wanted.map(async ({ href }) => {
+    // One of the site's own files (the repo, or static/, where a website uploaded as a zip keeps
+    // them): read from disk, however many the page links, with its url()s pointing at the same files
+    // from where imported stylesheets are saved (assets/css/imported/), so any base path works.
+    const own = ownSiteFile(href);
+    if (own) {
+      const dirOf = path.posix.dirname(own.rel);
+      const css = fs.readFileSync(own.file, 'utf8').replace(/url\(\s*(["']?)([^"')]+)\1\s*\)/gi, (whole, q, ref) => {
+        if (/^(data:|https?:|\/\/|#|blob:)/i.test(ref)) return whole;
+        const target = ref.startsWith('/') ? ref.slice(1) : path.posix.normalize(path.posix.join(dirOf, ref));
+        return `url(${q}${path.posix.relative('assets/css/imported', target)}${q})`;
+      });
+      sheets.set(href, { name: own.rel, css, warnings: [] });
+      return;
+    }
     const url = absoluteUrl(href.startsWith('//') ? `https:${href}` : href, /^(https?:)?\/\//i.test(href) ? 'https://localhost/' : base);
     if (!url) return;
     const warnings = [];
@@ -981,6 +1032,16 @@ async function remoteSheets(html, uploads, globals, base) {
 }
 
 const sheetName = (ref) => path.posix.basename(String(ref).split(/[?#]/)[0]).toLowerCase();
+
+/** A link to one of the site's own files ("/wp-content/themes/x/style.css"): `{ rel, file }`, or null. */
+function ownSiteFile(href) {
+  const clean = String(href).split(/[?#]/)[0];
+  if (!clean || /^[a-z][a-z0-9+.-]*:|^\/\//i.test(clean)) return null;
+  const rel = path.posix.normalize(clean.replace(/^\/+/, ''));
+  if (rel.startsWith('..') || rel.split('/')[0] === '.git') return null;
+  const file = [path.join(ROOT, rel), path.join(ROOT, 'static', rel)].find((f) => fs.existsSync(f) && fs.statSync(f).isFile());
+  return file ? { rel, file } : null;
+}
 
 /**
  * The global stylesheets (declared in scripts/site-tree.md, kept in
@@ -1126,7 +1187,7 @@ async function buildStyledPage(source, cssFiles, relFile, jsFiles = [], chromeWa
   // element inside it's put on, not only the wrapper.
   const switchedClasses = scriptClasses(scripts.sources.map((s) => s.code));
   const contentClasses = new Set([...page.classes, ...[...switchedClasses].filter((c) => page.rootClasses.has(c))]);
-  const scoped = scopeCss(allSheets, {
+  const scopeOptions = {
     scope: `.${IMPORT_SCOPE}`, prefix: IMPORT_PREFIX, classes: contentClasses, ids: page.ids,
     rootClasses: page.rootClasses, rootIds: page.rootIds, reveal,
     hints: presentationalHints(body, `.${IMPORT_SCOPE}`, bodyAttributes(html)),
@@ -1135,14 +1196,18 @@ async function buildStyledPage(source, cssFiles, relFile, jsFiles = [], chromeWa
     scripted: scripts.entries.length > 0,
     dropClasses: [...page.removedClasses].filter((c) => !switchedClasses.has(c)),
     dropIds: page.removedIds,
-  });
+  };
+  // A big theme or framework (WordPress themes, page builders) keeps thousands of rules for classes
+  // a script might add: trimmed until it fits (scopeFitting), never refused.
+  const fitted = scopeFitting(allSheets, scopeOptions, [html, ...scripts.sources.map((s) => s.code)], "the page's");
+  const scoped = fitted.scoped;
+  warnings.push(...fitted.notes);
   // Icons drawn from a sprite outside the kept content (<use href="#i-arrow">) need it with them.
   const sprite = svgDefinitions(html, body, IMPORT_PREFIX);
   if (sprite) body += `\n${sprite}`;
   body = scaleInlineRem(body, scoped.remFactor);
   warnings.push(...scoped.warnings);
   if (!scoped.rules) warnings.push("no CSS rules apply to this page's content, so it will show with browser default styles");
-  if (scoped.css.length > MAX_IMPORTED_CSS) throw new Error(`the page's CSS is over ${MAX_IMPORTED_CSS / 1024} KB even after unused rules are removed`);
   if (page.removed.length) warnings.push(`removed from the HTML: ${page.removed.join(', ')}`);
   if (own === 'choice') warnings.push("kept the page's own header and footer, as asked, without the site's");
   else if (own) warnings.push(`kept the page as it was, without the site's header and footer: its ${own} doesn't match the ones the site copied from ${ownChromeSource() ?? 'another page'}`);
@@ -1174,7 +1239,7 @@ async function buildStyledPage(source, cssFiles, relFile, jsFiles = [], chromeWa
     title: page.title,
     description: page.description,
     removed: page.removed,
-    body: `<div class="${wrapperClass}"${chromeSource}${revealAttributes(reveal, html)}>\n${asRawBlock(body)}\n</div>\n`,
+    body: `<div class="${wrapperClass}"${rootAttributes(html)}${chromeSource}${revealAttributes(reveal, html)}>\n${asRawBlock(body)}\n</div>\n`,
     // The copied header and footer: { id, files, header, footer, css } or null.
     chrome,
     // The page keeps its own header and footer (frontmatter ownChrome, which base.html reads).
@@ -1227,9 +1292,24 @@ function readableText(html) {
 }
 
 /** A fingerprint of a header's or footer's markup (cleanHtml's chrome part), its scripts and styles and spacing aside. */
+// Two headers (or footers) are the same one when a visitor sees the same thing: the same words, the
+// same links and the same pictures, in the same order. Which menu item is marked current, per-page
+// classes ("page-item-5792") and attributes a script left behind (style="") don't make another one.
 function chromeKey(html) {
-  const markup = html.replace(/<(script|style)\b[\s\S]*?<\/\1\s*>/gi, '').replace(/\s+/g, ' ').trim();
-  return createHash('sha1').update(markup).digest('hex').slice(0, 16);
+  const markup = html.replace(/<(script|style|template|noscript)\b[\s\S]*?<\/\1\s*>/gi, ' ');
+  // One page however its address is written: "/about-us/", "/about-us/index.html", "/about-us.html".
+  const pageAddress = (href) => {
+    const [where, rest = ''] = href.split(/(?=[?#])/);
+    return `${where.replace(/\/index\.html?$/i, '/').replace(/\.html?$/i, '').replace(/(.)\/$/, '$1')}${rest}`;
+  };
+  // A picture is the same picture at another size or copy ("logo-100x100.png", "logo@2x.png",
+  // "logo-ab33752b.png" from a copied website): WordPress serves a different size on some pages.
+  const picture = (src) =>
+    src.split(/[?#]/)[0].split('/').pop().replace(/(?:-[0-9a-f]{8})?(\.[a-z0-9]+)$/i, '$1').replace(/(?:-\d+x\d+|@\dx)+(\.[a-z0-9]+)$/i, '$1').replace(/(?:-\d+x\d+)+(\.[a-z0-9]+)$/i, '$1');
+  const links = [...markup.matchAll(/<(a|img|source|iframe)\b[^>]*?\b(href|src)\s*=\s*(["'])([^"']*)\3/gi)].map((m) =>
+    /^(img|source)$/i.test(m[1]) ? `img:${picture(m[4])}` : `${m[1].toLowerCase()}:${pageAddress(m[4])}`);
+  const markup2 = `${readableText(markup)}\n${links.join('\n')}`;
+  return createHash('sha1').update(markup2).digest('hex').slice(0, 16);
 }
 
 /** The site's header and footer partials when they were copied from a page (--with-header), else null. */
@@ -1344,10 +1424,27 @@ function buildChrome({ html, file, page, sheets, scripts, base, fonts, wanted, p
   const id = createHash('sha1').update(html).digest('hex').slice(0, 10);
   const classes = new Set();
   const ids = new Set();
+  // What the header and footer sat inside on the old page: rules start from those wrappers
+  // ("#header-outer #top nav"), so they count as the copied header's wrapper, like <body> does.
+  const aroundClasses = new Set();
+  const aroundIds = new Set();
   for (const part of Object.values(parts)) {
     for (const c of part.classes) classes.add(c);
     for (const i of part.ids) ids.add(i);
+    for (const c of part.around?.classes ?? []) aroundClasses.add(c);
+    for (const i of part.around?.ids ?? []) aroundIds.add(i);
   }
+  const chromeRootClasses = new Set([...page.rootClasses, ...aroundClasses]);
+  const chromeRootIds = new Set([...page.rootIds, ...aroundIds]);
+  // The outer boxes each part sat in: only that part's wrapper stands in for them.
+  // A box the page's content sat in too (shared) is page-wide: like <body>, it only passes styles down.
+  const shared = { classes: new Set(), ids: new Set() };
+  for (const part of Object.values(parts)) {
+    for (const c of part.around?.sharedClasses ?? []) shared.classes.add(c);
+    for (const i of part.around?.sharedIds ?? []) shared.ids.add(i);
+  }
+  const wrapperClasses = new Set([...aroundClasses].filter((c) => !page.rootClasses.has(c) && !shared.classes.has(c)));
+  const wrapperIds = new Set([...aroundIds].filter((i) => !page.rootIds.has(i) && !shared.ids.has(i)));
 
   const unavailable = [];
   const markup = {};
@@ -1387,12 +1484,17 @@ function buildChrome({ html, file, page, sheets, scripts, base, fonts, wanted, p
   // One the old <html> or <body> also had (<html class="w-full">) must still match the element
   // the script puts it on, not only the wrapper.
   const inside = new Set([...classes, ...[...switched].filter((c) => page.rootClasses.has(c))]);
-  const scoped = scopeCss(sheets, {
-    scope: `.${CHROME_SCOPE}`, prefix: IMPORT_PREFIX, classes: inside, ids, rootClasses: page.rootClasses, rootIds: page.rootIds,
-    hints: presentationalHints(Object.values(markup).join('\n'), `.${CHROME_SCOPE}`),
-    scripted: tags.length > 0, dropClasses: pageOnly(page.classes, new Set([...classes, ...switched])), dropIds: pageOnly(page.ids, ids), chrome: true,
-  });
-  if (scoped.css.length > MAX_IMPORTED_CSS) throw new Error(`the header and footer's CSS is over ${MAX_IMPORTED_CSS / 1024} KB even after unused rules are removed`);
+  const { scoped, notes: chromeNotes } = scopeFitting(
+    sheets,
+    {
+      scope: `.${CHROME_SCOPE}`, prefix: IMPORT_PREFIX, classes: inside, ids, rootClasses: chromeRootClasses, rootIds: chromeRootIds,
+      hints: presentationalHints(Object.values(markup).join('\n'), `.${CHROME_SCOPE}`),
+      scripted: tags.length > 0, dropClasses: pageOnly(page.classes, new Set([...classes, ...switched])), dropIds: pageOnly(page.ids, ids), chrome: true,
+      wrapperClasses, wrapperIds, alsoIn: '.imported-page',
+    },
+    [html, ...files.map((f) => f.content)],
+    "the header and footer's",
+  );
   for (const place of Object.keys(markup)) markup[place] = scaleInlineRem(markup[place], scoped.remFactor);
   const sprite = svgDefinitions(html, Object.values(markup).join('\n'), IMPORT_PREFIX);
   if (sprite) markup[parts.header ? 'header' : 'footer'] += `\n${sprite}`;
@@ -1400,7 +1502,26 @@ function buildChrome({ html, file, page, sheets, scripts, base, fonts, wanted, p
   const stylesheet = `assets/css/imported/chrome-${id}.css`;
   const from = path.posix.basename(file);
   const attr = (v) => String(v).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
-  const wrapperClass = [CHROME_SCOPE, ...[...page.rootClasses].map((c) => IMPORT_PREFIX + c)].join(' ');
+  // Each part's wrapper: the old <html>/<body> classes, and that part's own outer boxes' classes and
+  // ids (as classes, wrapperIdClass), so a rule for the header's box never reaches the footer.
+  const wrapperClass = (place) =>
+    [
+      CHROME_SCOPE,
+      ...[...page.rootClasses, ...(parts[place].around?.classes ?? [])].map((c) => IMPORT_PREFIX + c),
+      ...[...(parts[place].around?.ids ?? [])].filter((i) => wrapperIds.has(i)).map((i) => wrapperIdClass(IMPORT_PREFIX, i)),
+    ]
+      .filter((c, i, all) => all.indexOf(c) === i)
+      .join(' ');
+  // The old page's <html>/<body> attributes, then the wrappers' data-* ones it doesn't already have.
+  // The header's own wrappers' data-* attributes, then the old <html>/<body>'s it doesn't have: the
+  // closer an element was to the header, the more its attributes decide.
+  const esc = (v) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+  const wrapperAttrs = (place) => {
+    const own = new Map();
+    for (const [k, v] of parts[place].around?.attrs ?? []) if (!own.has(k)) own.set(k, v);
+    const ownAttrs = [...own].map(([k, v]) => ` ${k}="${esc(v)}"`).join('');
+    return ownAttrs + rootAttributes(html).replace(/ ([\w:-]+)="[^"]*"/g, (whole, k) => (own.has(k.toLowerCase()) ? '' : whole));
+  };
   const links = [`/${stylesheet}`, ...fonts].map((href) => `<link rel="stylesheet" href="${attr(href)}">`).join('\n');
   // What other pages don't have: the converted page's own parts, which its scripts may look up.
   const standIns = [...pageOnly(page.ids, ids).map((x) => `#${x}`), ...pageOnly(page.classes, classes).map((c) => `.${c}`)].join(' ');
@@ -1415,15 +1536,19 @@ function buildChrome({ html, file, page, sheets, scripts, base, fonts, wanted, p
   // the top of a page that wasn't made for it. Pages converted with their own look hide the spacer
   // (the CSS below): they were made for that header.
   const helper = `(function(){var me=document.currentScript,home=me.previousElementSibling,w=home.previousElementSibling,spacer=null;if(w&&w.hasAttribute('data-chrome-spacer')){spacer=w;w=w.previousElementSibling;}var source=function(){return document.querySelector('.imported-page[data-chrome-source="${id}"]');};function size(){if(!spacer||window.scrollY>40)return;var b=0;Array.prototype.forEach.call(w.querySelectorAll('*'),function(e){var p=getComputedStyle(e).position;if(p!=='fixed'&&!(p==='absolute'&&(e.offsetParent===document.body||e.offsetParent===null)))return;var r=e.getBoundingClientRect();if(!r.height||r.left>=innerWidth||r.right<=0||r.top>120)return;if(r.bottom>b)b=r.bottom;});spacer.style.height=Math.ceil(b)+'px';}size();addEventListener('load',size);addEventListener('resize',size);document.addEventListener('DOMContentLoaded',function(){if(source())return;Array.prototype.forEach.call(w.querySelectorAll('a[href^="#"]'),function(a){var id=a.getAttribute('href').slice(1);if(id&&!document.querySelector('[id="'+id.replace(/["\\\\]/g,'\\\\$&')+'"]'))a.setAttribute('href',home.getAttribute('href')+'#'+id);});});})();`;
+  // One header serves every page, so the menu item marked as the open page ("current-menu-item",
+  // aria-current) is moved to the link to the page being shown, as the old site marked it per page.
+  const currentMarker = `(function(){var w=document.currentScript.previousElementSibling;while(w&&!w.classList.contains('${CHROME_SCOPE}'))w=w.previousElementSibling;if(!w)return;var cur=/(^|[-_])current([-_]|$)|^(imp-)?(active|is-active|is-current)$/i;var path=function(h){try{var u=new URL(h,location.href);if(u.host!==location.host)return null;return u.pathname.replace(/index\\.html$/,'').replace(/\\.html$/,'').replace(/\\/$/,'')||'/';}catch(e){return null;}};var here=path(location.href);var states={};Array.prototype.forEach.call(w.querySelectorAll('[class]'),function(e){Array.prototype.slice.call(e.classList).forEach(function(c){if(cur.test(c)){(states[e.tagName]=states[e.tagName]||{})[c]=1;e.classList.remove(c);}});});Array.prototype.forEach.call(w.querySelectorAll('[aria-current]'),function(e){e.removeAttribute('aria-current');});Array.prototype.forEach.call(w.querySelectorAll('a[href]'),function(a){var h=a.getAttribute('href');if(!h||h.charAt(0)==='#'||path(h)!==here)return;a.setAttribute('aria-current','page');for(var e=a;e&&e!==w;e=e.parentElement){var s=states[e.tagName];if(s&&e!==a&&e.tagName!=='LI')continue;if(s)Object.keys(s).forEach(function(c){e.classList.add(c);});if(e.tagName==='LI')break;}});})();`;
   const partial = (place, withLinks, withScripts) => [
     `<!-- Copied from ${from.replace(/--/g, '-')} by scripts/edit-page.js --with-${place}: fixed HTML, so the menu settings don't change it. Convert again, or restore the standard ${place}, to change it. -->`,
-    `<div class="${wrapperClass}" ${COPIED_MARK} data-chrome-id="${id}" data-chrome-from="${attr(from)}" data-chrome-key="${chromeKey(parts[place].html)}">`,
+    `<div class="${wrapperClass(place)}"${wrapperAttrs(place)} ${COPIED_MARK} data-chrome-id="${id}" data-chrome-from="${attr(from)}" data-chrome-key="${chromeKey(parts[place].html)}">`,
     ...(withLinks ? [links] : []),
     asRawBlock(markup[place]),
     '</div>',
     ...(place === 'header' ? ['<div data-chrome-spacer aria-hidden="true"></div>'] : []),
     `<a hidden data-chrome-page href="${attr(pageUrl)}"></a>`,
     `<script>${helper}</script>`,
+    `<script>${currentMarker}</script>`,
     ...(withScripts && scriptBlock ? [scriptBlock] : []),
     '',
   ].join('\n');
@@ -1432,7 +1557,7 @@ function buildChrome({ html, file, page, sheets, scripts, base, fonts, wanted, p
   if (parts.footer) files.push({ file: FOOTER_FILE, content: partial('footer', !parts.header, true) });
   const spacerCss = 'body:has(.imported-page) [data-chrome-spacer] { display: none; }';
   files.push({ file: stylesheet, content: `/* The header and footer copied from ${from.replace(/\*\//g, '')} by scripts/edit-page.js. Scoped to .${CHROME_SCOPE}; regenerate it by converting again. */\n${spacerCss}\n${scoped.css}` });
-  warnings.push(...scoped.warnings.map((w) => `header and footer: ${w}`));
+  warnings.push(...chromeNotes, ...scoped.warnings.map((w) => `header and footer: ${w}`));
   return { id, files, warnings, header: Boolean(parts.header), footer: Boolean(parts.footer), css: scoped.css, rules: scoped.rules, markup, wrapperClass };
 }
 
@@ -1825,11 +1950,11 @@ function limitVision(images) {
 
 /**
  * The --reference screenshots as vision input: inside the repo (.git included, where the web app
- * keeps them), a PNG, JPEG, GIF or WebP by its first bytes, at most 2 of up to 5 MB each.
+ * keeps them), a PNG, JPEG, GIF or WebP by its first bytes, at most MAX_REFERENCES of up to 5 MB each.
  */
 function loadReferences(list) {
   const out = [];
-  for (const entry of list.slice(0, 2)) {
+  for (const entry of list.slice(0, MAX_REFERENCES)) {
     const absolute = path.resolve(ROOT, entry);
     if (!absolute.startsWith(ROOT + path.sep)) {
       console.log(`  ! design reference "${entry}" — outside the site's files, skipped`);
@@ -1865,7 +1990,7 @@ const REFERENCES = loadReferences(referenceArgs);
 // to choose one; the responsive and accessibility rules still hold.
 const REFERENCE_NOTE = `
 
-DESIGN REFERENCE: the images labelled "Design reference" are screenshots of the design the owner wants for this page, and they asked for it to be followed exactly. Replicate it as closely as you can:
+DESIGN REFERENCE: the images labelled "Design reference" are screenshots of the design the owner wants for this page, and they asked for it to be followed exactly. With several, they are parts of the same design in order (the top of the page, then sections further down, or frames from a video scrolling through it): build every part they show, in that order. Replicate it as closely as you can:
 - the same sections in the same order, with the same layout, proportions and alignment;
 - the same colours (sample them from the screenshot: backgrounds, text, accents, buttons, borders);
 - the closest Google Font to each typeface, with the same sizes, weights, italics and letter spacing;
@@ -2186,7 +2311,9 @@ function editChecks(original, updated, isContent) {
   }
 
   problems.push(...balanceProblems(updated));
-  return { problems, warnings: [] };
+  // A page's body, or a template's HTML: what the edit adds that won't fit a phone.
+  const body = (text) => (isContent ? parseFrontmatter(text).body : text);
+  return { problems, warnings: responsiveWarnings(body(original), body(updated)) };
 }
 
 const includesImage = (text, ref) => text.includes(ref) || text.includes(ref.replace(/&/g, '&amp;'));
@@ -2273,6 +2400,7 @@ function pageChecks(original, updated, relFile) {
     warnings.push('the body has a "# " heading; the layout already shows the title');
   }
   warnings.push(...bannedPhraseWarnings(after.body));
+  warnings.push(...responsiveWarnings(before.body, after.body));
 
   problems.push(...balanceProblems(updated), ...partialProblems(updated));
   return { problems, warnings };

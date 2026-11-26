@@ -38,7 +38,11 @@ const DROP_ELEMENTS = ['script', 'style', 'noscript', 'template', 'svg', 'canvas
 // Scripts leave the markup but are kept (scriptsIn); <template>, <canvas> and <noscript> stay for them.
 const DROP_STYLED_ELEMENTS = ['script', 'style', 'head'];
 // class/id tokens that mark site chrome outside the content.
-const CHROME_TOKEN = /^(?:(?:site|page|global|main|top|primary)[-_])?(header|footer|masthead|navbar|topbar|top-bar|mobile[-_]?(?:menu|nav)|off-?canvas(?:[-_]menu)?|sidebar|cookie[-_]?(?:banner|notice|consent)?)$/i;
+// Slide-out and off-canvas panels (a theme's phone menu, "#slide-out-widget-area", ".offcanvas-nav",
+// ".side-drawer") are taken whole: their own box is what keeps the menu off screen until it's opened.
+// A header's or footer's outer box ("#header-outer", ".footer-wrap", ".site-footer-container") counts as
+// the header or footer: the box is part of it, and left behind it shows as an empty bar.
+const CHROME_TOKEN = /^(?:(?:site|page|global|main|top|primary)[-_])?((?:header|footer)(?:[-_](?:outer|wrap|wrapper|container|area))?|masthead|navbar|topbar|top-bar|mobile[-_]?(?:menu|nav)|off-?canvas(?:[-_](?:menu|nav|panel|area|wrap|sidebar))?|slide-?out(?:[-_](?:widget[-_]area|menu|nav|panel|area))?|side[-_]?(?:menu|nav|drawer)|(?:menu|nav)[-_]?drawer|sidebar|cookie[-_]?(?:banner|notice|consent)?)$/i;
 // A start tag, with attribute values that may contain ">".
 const START_TAG = /<([a-zA-Z][\w:-]*)\b((?:[^>"']|"[^"]*"|'[^']*')*?)(\/?)>/g;
 
@@ -126,6 +130,9 @@ function chromeKind(name, attrs, inContent, atEdge) {
   const tokens = `${attribute(attrs, 'class') || ''} ${attribute(attrs, 'id') || ''}`.split(/\s+/).filter(Boolean);
 
   if (tokens.some((t) => /^breadcrumbs?$/i.test(t))) return 'breadcrumbs';
+  // Page numbers under a list of posts ("1 2 Next »") belong to that page, never to the site's footer.
+  const label = (attribute(attrs, 'aria-label') || '').toLowerCase();
+  if (tokens.some((t) => /^(?:[\w-]*[-_])?(?:pagination|pager|page-numbers|nav-links|paging)(?:[-_][\w-]*)?$|^posts?-navigation$/i.test(t)) || /pagination|pages|page navigation/.test(label)) return null;
   // A container named like a banner. Not "cookies" or a heading: a privacy page's <h2 id="cookies">
   // is its content.
   if ((COOKIE_CONTAINERS.has(name) && tokens.some((t) => COOKIE_TOKEN.test(t))) || role === 'alertdialog') return 'cookie banner';
@@ -139,10 +146,10 @@ function chromeKind(name, attrs, inContent, atEdge) {
     const hit = CHROME_TOKEN.exec(token);
     if (!hit) continue;
     const kind = hit[1].toLowerCase();
-    if (kind === 'footer') return 'footer';
+    if (/^footer/.test(kind)) return 'footer';
     if (kind === 'sidebar') return 'sidebar';
     if (kind.startsWith('cookie')) return 'cookie banner';
-    if (kind === 'navbar' || /^(mobile|off)/.test(kind)) return 'navigation';
+    if (kind === 'navbar' || /^(mobile|off|slide|side[-_]?(?:menu|nav|drawer)|menu|nav)/.test(kind)) return 'navigation';
     return 'header';
   }
   return null;
@@ -164,6 +171,34 @@ const SITE_WIDE = new Set(['header', 'navigation', 'footer', 'cookie banner']);
  * place "footer" for a footer, a cookie banner, or anything after the page's
  * content starts (its <main> or <h1>), else "header".
  */
+const VOID_TAGS = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
+
+/**
+ * The elements `index` sits inside (outermost first), <html>, <head> and <body> left out, each as
+ * { name, attrs }: the wrappers a header lived in ("#header-outer" around "<header id=top>"),
+ * whose names the theme's rules start from.
+ */
+export function ancestorsAt(html, index) {
+  const stack = [];
+  const tag = /<(\/?)([a-zA-Z][\w-]*)\b((?:[^>"']|"[^"]*"|'[^']*')*)>/g;
+  for (let m = tag.exec(html); m && m.index < index; m = tag.exec(html)) {
+    const [whole, closing, raw, attrs] = m;
+    const name = raw.toLowerCase();
+    if (/^(script|style|template|textarea)$/.test(name) && !closing) {
+      const end = html.toLowerCase().indexOf(`</${name}`, tag.lastIndex);
+      if (end < 0 || end > index) break;
+      tag.lastIndex = end;
+      continue;
+    }
+    if (VOID_TAGS.has(name) || whole.endsWith('/>')) continue;
+    if (closing) {
+      const at = stack.map((e) => e.name).lastIndexOf(name);
+      if (at >= 0) stack.length = at;
+    } else stack.push({ name, attrs });
+  }
+  return stack.filter((e) => !/^(html|head|body)$/.test(e.name));
+}
+
 function removeChrome(html, removed, collect = null, keepPageParts = false) {
   const tag = /<(\/?)([a-zA-Z][\w-]*)\b([^>]*)>/g;
   // Where the page's content starts: its <main> or <h1>; on a page with neither (many CMS themes),
@@ -184,6 +219,7 @@ function removeChrome(html, removed, collect = null, keepPageParts = false) {
   let out = '';
   let last = 0;
   let content = 0;
+  let contentAncestors = null;
   for (let m = tag.exec(html); m; m = tag.exec(html)) {
     const [whole, closing, rawName, attrs] = m;
     const name = rawName.toLowerCase();
@@ -206,7 +242,15 @@ function removeChrome(html, removed, collect = null, keepPageParts = false) {
       // After the content starts it's footer chrome, kept after the content as it was, so a fixed bar
       // from the end of the old page still paints over the content.
       const after = reason === 'footer' || reason === 'cookie banner' || (contentStart >= 0 && m.index > contentStart);
-      collect.push({ place: after ? 'footer' : 'header', html: html.slice(m.index, end) });
+      // A box the content sits in too (a theme's page-wide wrapper) is marked `shared`: its classes
+      // stay conditions for the theme's rules, but its own layout (a z-index, a min-height) is the
+      // whole page's, not the header's.
+      const around = ancestorsAt(html, m.index);
+      const contentAround = contentStart >= 0 ? (contentAncestors ??= ancestorsAt(html, contentStart)) : [];
+      around.forEach((e, i) => {
+        if (contentAround[i] && contentAround[i].name === e.name && contentAround[i].attrs === e.attrs && around.slice(0, i).every((x, j) => contentAround[j]?.attrs === x.attrs)) e.shared = true;
+      });
+      collect.push({ place: after ? 'footer' : 'header', html: html.slice(m.index, end), around });
     }
     last = end;
     tag.lastIndex = end;
@@ -343,7 +387,27 @@ export function cleanHtml(source, { keepStyles = false, prefix = '', keepChrome 
   if (keepStyles) {
     const styled = styledTags(html.trim(), prefix);
     // The removed header and footer, styled the same way, for a copy that keeps them as the site's.
-    const part = (place) => styledTags(chromeParts.filter((c) => c.place === place).map((c) => c.html.trim()).join('\n'), prefix);
+    // Each part with what it sat inside: the theme's rules for it often start from a wrapper
+    // ("#header-outer #top nav"), which doesn't come with it.
+    const part = (place) => {
+      const mine = chromeParts.filter((c) => c.place === place);
+      const around = { classes: new Set(), ids: new Set(), attrs: new Map(), sharedClasses: new Set(), sharedIds: new Set() };
+      for (const c of mine) {
+        // Innermost first: the wrapper closest to the header decides (data-format on #header-outer,
+        // not an outer box's), as it would for the theme's rules.
+        for (const e of [...(c.around ?? [])].reverse()) {
+          for (const k of (attribute(e.attrs, 'class') || '').split(/\s+/).filter(Boolean)) {
+            around.classes.add(k);
+            if (e.shared) around.sharedClasses.add(k);
+          }
+          const id = attribute(e.attrs, 'id');
+          if (id) around.ids.add(id);
+          if (id && e.shared) around.sharedIds.add(id);
+          for (const a of e.attrs.matchAll(/(data-[\w-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/gi)) if (!around.attrs.has(a[1].toLowerCase())) around.attrs.set(a[1].toLowerCase(), a[2] ?? a[3] ?? a[4] ?? '');
+        }
+      }
+      return { ...styledTags(mine.map((c) => c.html.trim()).join('\n'), prefix), around };
+    };
     // What the old <html> and <body> carried: their rules ("body.home .x") now describe the wrapper.
     const rootClasses = new Set();
     const rootIds = new Set();
@@ -628,6 +692,25 @@ export function svgDefinitions(source, kept, prefix = '') {
 }
 
 /** The attributes of the page's <body> tag, as written. */
+/**
+ * The old <html> and <body>'s data-*, lang and dir attributes (the body's winning), as an attribute
+ * string for the wrapper that stands in for them: themes write rules like
+ * body[data-header-format="left-header"] .x, which must hold exactly when they did on the old page.
+ */
+export function rootAttributes(source) {
+  const clean = String(source ?? '').replace(/<!--[\s\S]*?-->/g, '');
+  const found = new Map();
+  for (const tag of ['html', 'body']) {
+    const attrs = new RegExp(`<${tag}\\b((?:[^>"']|"[^"]*"|'[^']*')*)>`, 'i').exec(clean)?.[1] ?? '';
+    for (const m of attrs.matchAll(/([\w:-]+)\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'>]+))/g)) {
+      const name = m[1].toLowerCase();
+      if (!/^(data-[\w-]+|lang|dir)$/.test(name)) continue;
+      found.set(name, m[2] ?? m[3] ?? m[4] ?? '');
+    }
+  }
+  return [...found].slice(0, 60).map(([k, v]) => ` ${k}="${v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')}"`).join('');
+}
+
 export function bodyAttributes(source) {
   return /<body\b((?:[^>"']|"[^"]*"|'[^']*')*)>/i.exec(source.replace(/<!--[\s\S]*?-->/g, ''))?.[1] || '';
 }

@@ -56,6 +56,23 @@
     });
   });
 
+  // A table wider than its column (a pricing comparison on a phone) scrolls by itself,
+  // like a markdown table in .table-scroll, instead of being cut off at the screen's
+  // edge (main clips what sticks out sideways). Only tables that don't fit and aren't
+  // already in something that scrolls; an imported page's own CSS is left as it is.
+  document.querySelectorAll('main table').forEach(function (table) {
+    var parent = table.parentElement;
+    if (!parent || table.closest('.table-scroll, .imported-page, .imported-chrome') || parent.closest('table')) return;
+    if (table.offsetWidth <= parent.clientWidth + 1) return;
+    for (var el = parent; el && el.tagName !== 'MAIN'; el = el.parentElement) {
+      if (/auto|scroll/.test(window.getComputedStyle(el).overflowX)) return;
+    }
+    var wrap = document.createElement('div');
+    wrap.className = 'table-scroll';
+    parent.insertBefore(wrap, table);
+    wrap.appendChild(table);
+  });
+
   // A page imported with its own CSS (edit-page.js --keep-styles) may have had a
   // scroll-reveal effect driven by its old script. The converter records it on
   // the wrapper; this plays it back. Without this script (or IntersectionObserver)

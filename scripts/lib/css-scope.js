@@ -161,14 +161,19 @@ function prefixClassAttributes(selector, prefix) {
   });
 }
 
+/** The class a copied header's or footer's wrapper carries for an outer box's id it stands in for. */
+export const wrapperIdClass = (prefix, id) => `${prefix}id-${id.replace(/[^\w-]/g, '_')}`;
+
 /** The scoped selector, or null if it refers to a class or id that isn't in the page. */
 function scopeSelector(selector, options) {
-  const { scope, prefix, classes, ids, rootClasses, rootIds, scripted, dropClasses, dropIds } = options;
+  const { scope, prefix, classes, ids, rootClasses, rootIds, scripted, dropClasses, dropIds, mentioned, wrapperClasses, wrapperIds } = options;
   // Without scripts a class or id that isn't in the page never will be, so its rule goes. With
   // scripts it may be added later (an "is-open", a library's "aos-animate"), so only the removed
-  // header's and footer's go.
-  const known = (name) => classes.has(name) || rootClasses.has(name) || (scripted && !dropClasses.has(name));
-  const knownId = (id) => ids.has(id) || rootIds.has(id) || (scripted && !dropIds.has(id));
+  // header's and footer's go; with `mentioned`, only names the page's HTML or scripts contain
+  // somewhere (an attribute, a settings object, a script's string) can be added later.
+  const maybeLater = (name, dropped) => scripted && !dropped.has(name) && (!mentioned || mentioned.has(name));
+  const known = (name) => classes.has(name) || rootClasses.has(name) || maybeLater(name, dropClasses);
+  const knownId = (id) => ids.has(id) || rootIds.has(id) || maybeLater(id, dropIds);
   let missing = false;
   outsideStrings(withoutFunctionalArgs(selector), (part) => {
     for (const m of part.matchAll(/\.((?:\\.|[\w-])+)/g)) if (!known(unescape(m[1]))) missing = true;
@@ -181,7 +186,8 @@ function scopeSelector(selector, options) {
   let rest = prefixClassAttributes(outsideStrings(selector, (part) => part.replace(/\.((?:\\.|[\w-])+)/g, `.${prefix}$1`)), prefix);
   // Classes and ids the old <html> and <body> carried (and the class a reveal script adds there)
   // now belong to the scope: "body.home .x", ".js .x" and "#page .x" all start from the wrapper.
-  const rootToken = /^(?:\.(?:\\.|[\w-])+|#(?:\\.|[\w-])+)+(?=[\s>+~]|$)/;
+  // Classes and ids, with any attribute conditions and :not()s on them ("#header-outer[data-format=x]").
+  const rootToken = /^(?:\.(?:\\.|[\w-])+|#(?:\\.|[\w-])+|\[[^\]]*\]|:not\([^()]*\))+(?=[\s>+~]|$)/;
   // A leading class that's on no element (".js .reveal", ".menu-open .nav") is one a script adds,
   // usually to <html> or <body>, which are the wrapper now, but maybe to an element inside. Both
   // are matched.
@@ -204,20 +210,61 @@ function scopeSelector(selector, options) {
   let rooted = false;
   let kind = null;
   let pseudo = '';
+  let idWeight = 0;
   for (;;) {
     const m = ROOT_COMPOUND.exec(rest);
     const bare = !m && rootToken.exec(rest);
     const compound = m ? m[0] : bare && isRootCompound(bare[0]) ? bare[0] : null;
     if (!compound) break;
     if (!m && inContent(compound)) shared = true;
-    for (const [, sign, name] of compound.matchAll(/([.#])((?:\\.|[\w-])+)/g)) {
-      if (sign === '.' && rootClasses.has(unescape(name).slice(prefix.length)) && !scoped.includes(`.${name}`)) scoped += `.${name}`;
+    // "html:not(.js)" is a condition on the wrapper's classes, never a class it must have: each
+    // :not(…) goes onto the wrapper as it is (its classes were prefixed with the rest), and only the
+    // classes outside it are required. (Reading them all as required turned "no js" into "js".)
+    const negations = [];
+    // Attribute conditions on the old <html>/<body> ("body[data-header-format=left-header] .x")
+    // stay conditions: the wrapper carries those attributes (rootAttributes in html-source.js).
+    const conditions = [];
+    const positive = compound
+      .replace(/:not\(([^()]*)\)/gi, (whole) => {
+        negations.push(whole);
+        return '';
+      })
+      .replace(/\[[^\]]*\]/g, (whole) => {
+        conditions.push(whole);
+        return '';
+      });
+    // Every class stays a condition, the old <body>'s own and the rest alike: "body.no-header-template
+    // #header-outer" applies only while the wrapper has that class (a script may add it), never always.
+    for (const [, sign, name] of positive.matchAll(/([.#])((?:\\.|[\w-])+)/g)) {
+      if (sign === '.' && !scoped.includes(`.${name}`)) scoped += `.${name}`;
     }
+    for (const not of [...conditions, ...negations]) if (!scoped.includes(not)) scoped += not;
+    // An id the old wrapper had ("#header-outer .logo img") ranked the rule above class-only rules
+    // (".row .col img"). The wrapper is a class now, so the rule keeps that rank with an always-true
+    // id-weight condition (no element has that id): the cascade stays the original's.
+    for (const [, sign] of positive.matchAll(/([#])((?:\\.|[\w-])+)/g)) if (sign === '#') { idWeight += 1; }
+    // An outer box a copied header sat in (wrapperIds, `around` in html-source.js) is one part's
+    // wrapper, never the other's: its id is that wrapper's class (wrapperIdClass).
+    for (const [, name] of positive.matchAll(/#((?:\\.|[\w-])+)/g)) {
+      const own = `.${wrapperIdClass(prefix, unescape(name))}`;
+      if (wrapperIds?.has(unescape(name)) && !scoped.includes(own)) scoped += own;
+    }
+    // A rule for such a box keeps all of it (its position, height, background): it's the header's
+    // own box, not the old <body>.
+    const boxed = [...positive.matchAll(/([.#])((?:\\.|[\w-])+)/g)].some(([, sign, name]) =>
+      sign === '#' ? wrapperIds?.has(unescape(name)) : wrapperClasses?.has(unescape(name).slice(prefix.length)));
     // "body::before" is the wrapper's ::before, not the wrapper.
     pseudo = /::?(?:before|after|selection|first-line|first-letter|marker|backdrop)\b/i.exec(compound)?.[0] || pseudo;
-    kind = /^(html|:root)/i.test(compound) ? 'html' : kind || 'body';
+    kind = /^(html|:root)/i.test(compound) ? 'html' : boxed ? 'wrapper' : kind || 'body';
     rest = rest.slice(compound.length).trimStart();
     rooted = true;
+  }
+  if (idWeight) scoped += `:not(${Array.from({ length: idWeight }, () => `#${prefix}none`).join('')})`;
+  // A copied header's or footer's own element (by its id, which nothing else has) that a theme's
+  // script moves into the page (an off-canvas menu moved into the content wrapper) keeps its
+  // styles there too (`alsoIn`, the page's scope).
+  if (options.alsoIn && rest && scoped === scope && [...rest.matchAll(/#((?:\\.|[\w-])+)/g)].some(([, id]) => ids.has(unescape(id)) && !wrapperIds?.has(unescape(id)))) {
+    scoped = `:is(${scope}, ${options.alsoIn})`;
   }
   // "body > .x" becomes ".scope > .x", and a plain selector becomes a descendant of the scope.
   const result = rooted && !rest ? { selector: scoped + pseudo, root: pseudo ? null : kind } : { selector: `${scoped} ${rest}`, root: null };
@@ -379,11 +426,13 @@ function scopeNodes(nodes, options, imports, warnings) {
       if (!scoped.length) continue;
       urlWarnings(body, warnings);
       const root = scoped.every((s) => s.root) ? scoped[0].root : null;
-      let text = rewriteBody(body.trim(), options, root, warnings);
+      // A copied header's own outer box ('wrapper') is styled like any element.
+      const bodyRoot = root === 'wrapper' ? null : root;
+      let text = rewriteBody(body.trim(), options, bodyRoot, warnings);
       // A copied header or footer is only part of the old <body>: it takes what the body passed
       // down (font, colour…), not its box (a min-height, padding for a fixed bar, a background).
-      if (options.chrome && root && !text.includes('{')) text = inheritedOnly(text);
-      if (options.chrome && root && !text) continue;
+      if (options.chrome && bodyRoot && !text.includes('{')) text = inheritedOnly(text);
+      if (options.chrome && bodyRoot && !text) continue;
       out.push(`${scoped.map((s) => s.selector).join(',\n')} {${text ? ` ${text} ` : ''}}`);
     }
   }
@@ -414,12 +463,19 @@ function flatRules(css) {
  */
 export function detectReveal(sheets, classes) {
   const rules = sheets.flatMap(({ css }) => flatRules(css));
+  // A switch on the page (".js", ".aos-ready") has no look of its own. A class some rule gives a
+  // size, a position or a display of its own (".close-indicator { position: fixed; width: 90px }")
+  // is a component: putting it on the whole page would turn the page into that component.
+  const LOOK = /(^|;)\s*(position|width|height|top|left|right|bottom|display|float|margin|padding|font-size|line-height)\s*:/i;
+  const styledAsElement = (name) =>
+    rules.some(({ selectors, body }) => LOOK.test(body) && selectors.some((sel) => new RegExp(`(^|[\\s>+~])\\.${name}(?![\\w-])[^\\s>+~]*$`).test(sel.trim())));
   for (const { selectors, body } of rules) {
     if (!/(^|;)\s*opacity\s*:\s*0(?![.\d])/.test(body)) continue;
     for (const selector of selectors) {
       const hidden = /^(?:html)?\.([\w-]+)\s+\.([\w-]+)$/.exec(selector.trim());
       if (!hidden || classes.has(hidden[1]) || !classes.has(hidden[2])) continue;
       const [, root, target] = hidden;
+      if (styledAsElement(root)) continue;
       for (const other of rules) {
         for (const s of other.selectors) {
           const shown = new RegExp(`^(?:html)?\\.${root}\\s+\\.${target}\\.([\\w-]+)$`).exec(s.trim());
@@ -462,10 +518,21 @@ function keyframeNames(sheets) {
  * now describe the wrapper); `reveal` (from detectReveal) keeps that effect's
  * script-added classes. With `scripted` (the page's scripts are kept) rules
  * for classes and ids that aren't in the page stay, since a script may add
- * them, except `dropClasses`/`dropIds` (the removed header's and footer's).
+ * them, except `dropClasses`/`dropIds` (the removed header's and footer's), and with `mentioned`
+ * (a Set, mentionedNames) only those the page names somewhere: for very large frameworks.
  * Returns { css, warnings, rules, remFactor }.
  */
-export function scopeCss(sheets, { scope, prefix, classes, ids, rootClasses = new Set(), rootIds = new Set(), reveal = null, hints = [], scripted = false, dropClasses = [], dropIds = [], chrome = false }) {
+/**
+ * Every name-like word in `texts` (a page's whole HTML and its scripts' code): what a class or id
+ * a script adds later must be among, since the script or the markup it reads has to name it.
+ */
+export function mentionedNames(texts) {
+  const names = new Set();
+  for (const text of texts) for (const m of String(text ?? '').matchAll(/[A-Za-z_][\w-]*/g)) names.add(m[0]);
+  return names;
+}
+
+export function scopeCss(sheets, { scope, prefix, classes, ids, rootClasses = new Set(), rootIds = new Set(), reveal = null, hints = [], scripted = false, dropClasses = [], dropIds = [], chrome = false, mentioned = null, wrapperClasses = null, wrapperIds = null, alsoIn = null }) {
   const imports = [];
   const warnings = new Set();
   const out = [];
@@ -476,7 +543,7 @@ export function scopeCss(sheets, { scope, prefix, classes, ids, rootClasses = ne
   }
   const options = {
     scope, prefix, classes, ids, rootClasses: roots, rootIds,
-    scripted, dropClasses: new Set(dropClasses), dropIds: new Set(dropIds), chrome,
+    scripted, dropClasses: new Set(dropClasses), dropIds: new Set(dropIds), chrome, mentioned, wrapperClasses, wrapperIds, alsoIn,
     remFactor: rootFontFactor(sheets), keyframes: keyframeNames(sheets), layers: [], htmlValues: htmlDeclarations(sheets),
   };
   let rules = 0;
@@ -518,7 +585,10 @@ export function scopeCss(sheets, { scope, prefix, classes, ids, rootClasses = ne
       ]
     : [`/* The site's own styles don't apply inside ${scope}. */`, ...isolateRules, ...(hints.length ? [hintComment, ...hints] : [])];
   if (options.remFactor !== 1) warnings.add(`the page set its root font size to ${options.remFactor * 16}px, so its rem values were rescaled to match`);
-  const css = [...new Set(imports), ...isolate, ...out].join('\n');
+  // The page as a whole is never hidden: themes hide <body> (now the wrapper) until a script fades
+  // it in (page transitions, "loading" screens), and a converted page may have no such script.
+  const shown = `/* The page itself always shows (themes hide it until a script fades it in). */\n${scope} { opacity: 1 !important; visibility: visible !important; }`;
+  const css = [...new Set(imports), ...isolate, ...out, shown].join('\n');
   return { css: `${css}\n`, warnings: [...warnings], rules, remFactor: options.remFactor };
 }
 
