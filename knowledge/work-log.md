@@ -1,0 +1,91 @@
+# Work log
+
+Written automatically: one line per change Claude made to this site that was kept, oldest first. Claude reads this before every request so new work stays consistent with earlier work. Older lines move to knowledge/archive/. Standing decisions belong in knowledge/notes.md, not here.
+- 2026-11-17 · assistant:write-file · content/pages/blog-survey-school-comparison.md · Create related blog 5, "How One Program Used Survey Data to Decide Which Schools Need Support First", in the same design as the other survey blogs, with an emp…
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-data-to-action.md · Add a "Related reading" section at the bottom of the main survey blog linking to all five related posts.
+- 2026-11-17 · assistant:edit-file · content/pages/blog.md · Add the six survey dashboard posts to the top of the Blog page under Guides.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-overview-dashboard.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-topics-and-questions.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-growth-during-the-year.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-year-over-year.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-data-to-action.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-overview-dashboard.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-topics-and-questions.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-growth-during-the-year.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-year-over-year.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-school-comparison.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
+- 2026-11-17 · assistant:create-page · content/pages/case-studies-agvantage-claude-bid-agents.md · Create the AgVantage Claude bid agents case study page, to be filled from your HTML file.
+- 2026-11-17 · assistant:create-page · content/pages/case-studies-ai-excel-data-extractor.md · Create the Excel Data Extractor case study page.
+- 2026-11-17 · assistant:create-page · content/pages/case-studies-warehouse-label-capture-claude.md · Create the warehouse label capture case study page.
+- 2026-11-17 · assistant:create-page · content/pages/case-studies-claude-website-builder.md · Create the Claude website builder case study page.
+- 2026-11-17 · assistant:create-page · content/pages/case-studies-twintrack-claude-code.md · Create the TwinTrack Claude Code case study page.
+- 2026-11-17 · page:convert · content/pages/case-studies-agvantage-claude-bid-agents.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
+  - Replaced the page body with the original agvantage-claude-bid-agents.html markup and styling, kept as-is with no text changes.
+  - Added a `stylesheet` field pointing to /assets/css/imported/case-studies-agvantage-claude-bid-agents.css, which holds the page's 300 scoped CSS rules.
+  - Set frontmatter title, description, metaTitle, metaDescription and focusKeyword to the new AgVantage Claude agents copy.
+  - Added `hideCta`, `ownChrome`, `scriptHtmlClass`, `scriptBodyClass` and a `scripts` list (inline-1 in head, deferred ts-analytics.js, inline-2 in body).
+- 2026-11-17 · page:convert · content/pages/case-studies-ai-excel-data-extractor.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
+  - Replaced the page body with the HTML of ai-excel-data-extractor.html, keeping its own markup and styling intact.
+  - Moved the page's 300 CSS rules to assets/css/imported/case-studies-ai-excel-data-extractor.css and linked it via the stylesheet field.
+  - Set title, description, metaTitle, metaDescription and focusKeyword; kept slug, url and order, dropped the old content fields.
+  - Added ownChrome, hideCta, scriptHtmlClass/scriptBodyClass and three script entries, including /js/ts-analytics.js.
+- 2026-11-17 · page:convert · content/pages/case-studies-warehouse-label-capture-claude.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
+  - Replaced the page body with the HTML of warehouse-label-capture-claude.html copied as-is, own styling intact.
+  - Moved its 300 CSS rules into assets/css/imported/case-studies-warehouse-label-capture-claude.css, scoped to the page and linked via the stylesheet field.
+  - Set title, description, metaTitle, metaDescription, focusKeyword, hideCta, ownChrome, scriptHtmlClass and scriptBodyClass in frontmatter.
+  - Added three script entries (two imported inline scripts plus /js/ts-analytics.js) and removed the old body and content fields.
+- 2026-11-17 · page:convert · content/pages/case-studies-claude-website-builder.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
+  - Replaced the page body with the HTML of claude-website-builder.html copied as-is, served at /case-studies/claude-website-builder.html.
+  - Saved the page's 300 CSS rules to /assets/css/imported/case-studies-claude-website-builder.css and set it as the stylesheet.
+  - Set frontmatter title, description, metaTitle, metaDescription and focusKeyword "Claude website builder"; kept slug, url and order.
+  - Added hideCta, ownChrome, three script entries (two imported inline, ts-analytics) and html/body classes scroll-smooth, font-sans antialiased text-slate-800.
+- 2026-11-17 · page:convert · content/pages/case-studies-twintrack-claude-code.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
+  - Replaced the page body with the twintrack-claude-code.html HTML copied as-is, keeping its own markup and styling.
+  - Saved its 300 CSS rules scoped to this page as assets/css/imported/case-studies-twintrack-claude-code.css, linked via the `stylesheet` field.
+  - Set `title` to "TwinTrack: Building a Business Platform with Claude Code"; rewrote `description` and added `metaTitle`, `metaDescription`, `focusKeyword`.
+  - Added two imported inline scripts and `/js/ts-analytics.js` to `scripts`; set `hideCta`, `ownChrome`, `scriptHtmlClass` and `scriptBodyClass`.
+- 2026-11-17 · assistant:edit-file · content/pages/case-studies.md · Add the "AI & Claude Implementation" filter button and the five new Claude case study cards at the top of the case studies grid.
+- 2026-11-17 · assistant:edit-file · content/pages/blog.md · Add the Salesforce Voice and Tableau filter buttons and put the 12 Voice and Tableau post cards back on the Blog page, after the Smart Forms and Surveys cards.
+- 2026-11-17 · assistant:edit-file · content/pages/blog-salesforce-voice-amazon-connect-features.md · Change the author to Ishtiaq Hossen, Salesforce Developer.
+- 2026-11-19 · github-changes · the site's repository · Brought in changes published elsewhere: Update Contact TwinStack Solutions
+- 2026-11-19 · github-changes · the site's repository · Brought in changes published elsewhere: Update Contact TwinStack Solutions and AI notes about your site
+- 2026-11-19 · assistant:edit-file · content/pages/blog.md · Show the new cover pictures on the six survey cards and the FormAssembly card in the Blog list.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-data-to-action.md · Put the cover picture at the top of the post.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-overview-dashboard.md · Put the cover picture at the top of the post.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-topics-and-questions.md · Put the cover picture at the top of the post.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-growth-during-the-year.md · Put the cover picture at the top of the post.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-year-over-year.md · Put the cover picture at the top of the post.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-school-comparison.md · Put the cover picture at the top of the post.
+- 2026-11-19 · assistant:edit-file · content/pages/blog-formassembly-in-the-real-world.md · Add the cover picture under the heading of the FormAssembly post.
+- 2026-11-19 · assistant:edit-file · content/pages/case-studies.md · Use the new cover pictures on the five Claude case study cards.
+- 2026-11-19 · assistant:edit-file · content/pages/case-studies-agvantage-claude-bid-agents.md · Replace the drawn cover with the new cover picture.
+- 2026-11-19 · assistant:edit-file · content/pages/case-studies-ai-excel-data-extractor.md · Replace the drawn cover with the new cover picture.
+- 2026-11-19 · assistant:edit-file · content/pages/case-studies-warehouse-label-capture-claude.md · Replace the drawn cover with the new cover picture.
+- 2026-11-19 · assistant:edit-file · content/pages/case-studies-claude-website-builder.md · Replace the drawn cover with the new cover picture.
+- 2026-11-19 · assistant:edit-file · content/pages/case-studies-twintrack-claude-code.md · Replace the drawn cover with the new cover picture.
+- 2026-11-19 · github-changes · the site's repository · Brought in changes published elsewhere: Update Contact TwinStack Solutions and AI notes about your site; Update Contact TwinStack Solutions and AI notes about…
+- 2026-11-19 · assistant:edit-file · content/pages/blog.md · Add the six survey posts to the Tableau filter and change their label from "Survey Dashboards" to "Tableau".
+- 2026-11-20 · assistant:delete-page · content/blog/2026-11-20-blog-salesforce-flow-best-practices.md · Remove the empty placeholder post so only the finished Flow post exists.
+- 2026-11-20 · assistant:edit-file · content/pages/blog.md · Add the new Flow best practices post as the first card in the Blog list.
+- 2026-11-20 · page:edit · content/pages/blog-salesforce-flow-best-practices.md · Rewrite this whole page as a blog post in the exact layout/style of content/pages/blog-survey-data-to-action.md (hero, Back to the blog, tags, h1, author TwinS…
+  - Rewrote the page as a full blog post with a hero containing "Back to the blog", Salesforce/Flow/Admin tips tags, h1, "By TwinStack Team" and the 2026-11-20 date, plus the aspect-video cover image ben…
+  - Rebuilt the body as alternating white/slate sections: "The 12 Flow rules" with numbered H3s and a figure after rule 5, then the "Checklist before you activate a Flow", an FAQ using details/summary an…
+  - Added the Sources list, the three product link blocks, the dark CTA band with "Need help with your Salesforce Flows?" linking to /contact.html, and the Read next link to /blog/survey-data-to-action.h…
+  - Set frontmatter fields: date, tags, description, metaTitle, metaDescription and focusKeyword "salesforce flow best practices", keeping the URL at /blog/salesforce-flow-best-practices.html.
+- 2026-11-19 · github-changes · the site's repository · Brought in changes published elsewhere: Update FormAssembly in the Real World: Lessons from Live Salesforce Projects and From Survey Data to Action: How Salesf…
+- 2026-11-20 · page:edit · content/pages/services-salesforce-org-migration.md · can you remove this section "Migration work we have delivered" from the 'Salesforce Org Migration' page? Change only what this asks for, and keep everything el…
+  - Removed the "Migration work we have delivered" section (id="work") from the page, including its composite-examples note and three example blocks.
+  - The "What clients say" testimonials section now follows the section above it directly, with no other changes to its markup.
+  - All remaining sections (FAQ, contact, footer) and page frontmatter were left exactly as they were.
+- 2026-11-20 · github-changes · the site's repository · Brought in changes published elsewhere: Update Insights & Updates and AI notes about your site
+- 2026-11-20 · github-changes · the site's repository · Brought in changes published elsewhere: Update Salesforce Flow Best Practices: 12 Rules for Admins and AI notes about your site; Update 2026-11-20-blog-salesfo…
+- 2026-11-23 · github-changes · the site's repository · Brought in changes published elsewhere: Update Salesforce Org Migration and AI notes about your site; Update Salesforce Flow Best Practices: 12 Rules for Admin…
+- 2026-11-25 · owner:style-text · content/pages/home.md · The owner reset a text colour on the site
+  - “Build your Salesforce product with us”
+- 2026-11-25 · owner:new-page · content/pages/case-studies-agvantage-bid-agents-landing.md · The owner made a page at /case-studies/agvantage-bid-agents-landing
+- 2026-11-25 · page:edit · content/pages/case-studies-agvantage-bid-agents-landing.md · This is a new, empty page. Write it from scratch. Create a modern one-page landing-style case study page (in the style of top one-page landing pages: bold full…
+  - Replaced the placeholder title and sentence with a full case study page for AgVantage Commodities.
+  - Added a dark full-width hero with headline, summary, "Back to Case Studies" link and a "See how it works" button linking to #how-it-works.
+  - Added an at-a-glance stat band, challenge and solution sections, four numbered process steps, a judgement-calls section and a results section.
+  - Added a closing call-to-action band with "Talk to Us" link to /contact.html, plus description, metaTitle, metaDescription and focusKeyword frontmatter.
+- 2026-11-25 · github-changes · the site's repository · Brought in changes published elsewhere: Update the site's tools from the template
