@@ -1,7 +1,7 @@
 ---
 title: "Public Salesforce Forms Without the Anxiety: Spam, Uploads and Guest Access"
 slug: blog-secure-public-salesforce-forms
-url: /blog/secure-public-salesforce-forms.html
+url: /products/smart-forms-surveys/blogs/secure-public-salesforce-forms.html
 order: 50
 date: 2026-11-11
 description: "A public form is open to everyone. Here are the layers that protect your Salesforce org: spam checks, upload limits, create-only access and permission sets."
@@ -179,13 +179,13 @@ tags:
     <h2 class="text-2xl font-semibold tracking-tight text-balance text-slate-950 sm:text-3xl">Related reading</h2>
     <ul class="mt-6 space-y-3">
       <li>
-        <a href="/blog/native-salesforce-forms.html" class="group flex min-h-11 items-center justify-between gap-4 rounded-2xl p-4 text-lg font-medium text-slate-900 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:text-brand hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:p-5">
+        <a href="/products/smart-forms-surveys/blogs/native-salesforce-forms.html" class="group flex min-h-11 items-center justify-between gap-4 rounded-2xl p-4 text-lg font-medium text-slate-900 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:text-brand hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:p-5">
           <span>Why Native Salesforce Forms Beat a Form Tool Plus a Connector</span>
           <svg class="h-5 w-5 shrink-0 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </li>
       <li>
-        <a href="/blog/build-public-salesforce-form.html" class="group flex min-h-11 items-center justify-between gap-4 rounded-2xl p-4 text-lg font-medium text-slate-900 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:text-brand hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:p-5">
+        <a href="/products/smart-forms-surveys/blogs/build-public-salesforce-form.html" class="group flex min-h-11 items-center justify-between gap-4 rounded-2xl p-4 text-lg font-medium text-slate-900 ring-1 ring-slate-200 transition hover:-translate-y-0.5 hover:text-brand hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:p-5">
           <span>How to Build a Public Salesforce Form in Five Steps (No Code)</span>
           <svg class="h-5 w-5 shrink-0 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>

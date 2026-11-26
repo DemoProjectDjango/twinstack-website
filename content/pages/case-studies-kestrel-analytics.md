@@ -121,7 +121,7 @@ scriptBodyClass: font-sans antialiased text-slate-800
                     An early instinct, consistent with both prior abandoned attempts, was to identify permission sets with clearly outdated names and remove them directly. This was deliberately not the approach taken this time, for a specific reason surfaced early: a spot check on three permission sets with names referencing a reorganisation that had concluded over two years earlier found that all three still had active user assignments, and for one of the three, at least one currently assigned user's edit access to a commission-related field had no other source. The permission set's name was obsolete. Its function, for one specific user, was not.
                 </p>
                 <p>
-                    This confirmed that any permission set, regardless of how outdated its name appeared, required checking actual current dependency before being touched. <a href="/blog/salesforce-permission-set-cleanup.html">Why this is unsafe to skip is covered in more depth here</a>.
+                    This confirmed that any permission set, regardless of how outdated its name appeared, required checking actual current dependency before being touched. <a href="/products/who-sees-what/blogs/salesforce-permission-set-cleanup.html">Why this is unsafe to skip is covered in more depth here</a>.
                 </p>
                 <h2 id="process">3. The process</h2>
                 <h3>Step 1: full inventory</h3>

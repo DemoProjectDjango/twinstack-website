@@ -240,7 +240,7 @@ focusKeyword: "salesforce flow best practices"
       <div class="min-w-0">
         <h3 class="text-2xl font-semibold tracking-tight text-balance text-zinc-950 sm:text-3xl">Test with bulk data before you activate</h3>
         <div class="prose prose-zinc prose-lg prose-a:text-zinc-950 prose-a:underline-offset-4 mt-4 max-w-none">
-          <p>Testing with one record proves very little. In a sandbox, load 200 or more records with Data Loader so the Flow handles a full batch, as it will in real use. Our free <a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader</a> is one option for preparing and loading that test data.</p>
+          <p>Testing with one record proves very little. In a sandbox, load 200 or more records with Data Loader so the Flow handles a full batch, as it will in real use. Our free <a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader</a> is one option for preparing and loading that test data.</p>
           <p>Then open the debug log and check the number of SOQL queries and DML statements used. If those counts grow with the number of records, a query or update is still inside a loop. Keep the previous Flow version so you can roll back quickly if something goes wrong after activation.</p>
         </div>
       </div>
@@ -345,9 +345,9 @@ focusKeyword: "salesforce flow best practices"
     </ul>
     <h3 class="mt-10 text-lg font-semibold text-zinc-950">More from TwinStack</h3>
     <ul class="mt-4 flex flex-wrap gap-3">
-      <li><a href="/products/google-form-auto-sync.html" class="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-medium text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-950 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">Google Form Auto Sync</a></li>
-      <li><a href="/products/who-sees-what.html" class="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-medium text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-950 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">Who Sees What</a></li>
-      <li><a href="/products/smart-lookup-data-loader.html" class="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-medium text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-950 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">Smart Lookup Data Loader</a></li>
+      <li><a href="/products/google-form-auto-sync/" class="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-medium text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-950 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">Google Form Auto Sync</a></li>
+      <li><a href="/products/who-sees-what/" class="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-medium text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-950 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">Who Sees What</a></li>
+      <li><a href="/products/smart-lookup-data-loader/" class="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-5 text-sm font-medium text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-zinc-950 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-950">Smart Lookup Data Loader</a></li>
     </ul>
   </div>
 </section>

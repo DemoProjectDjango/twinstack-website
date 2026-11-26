@@ -78,7 +78,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <h3>2. Use the fiscal calendar</h3>
 <p>Salesforce's fiscal year ends on 31 January, with quarters ending 30 April, 31 July, 31 October and 31 January. Sales teams care most about closing before a quarter or year ends. A decision date a few days before one is a natural deadline. With the third quarter ending on 31 October 2026, anyone renewing in the next few weeks has a deadline to work with.</p>
 <h3>3. Right-size before you renew</h3>
-<p>Count real logins and feature use. Seats that nobody has opened in six months are money. Renewals are the only point where it is easy to reduce, so audit users first. Our free <a href="/products/who-sees-what.html">Who Sees What</a> app shows exactly what each user can reach, which makes it easier to right-size permissions and licence types at the same time.</p>
+<p>Count real logins and feature use. Seats that nobody has opened in six months are money. Renewals are the only point where it is easy to reduce, so audit users first. Our free <a href="/products/who-sees-what/">Who Sees What</a> app shows exactly what each user can reach, which makes it easier to right-size permissions and licence types at the same time.</p>
 <h3>4. Price the new editions against legacy</h3>
 <p>For 50 users, Enterprise at $175 is $105,000 at list, and with Premier Success at about 30% it is $136,500. Core at $195 is $117,000 with Premier, Slack, Tableau Next and Agentforce credits bundled. The new tier may be cheaper, or it may not, but you should run both before choosing. We explain the tiers in <a href="/blog/salesforce-core-vs-advanced-vs-max.html">Core vs Advanced vs Max</a>.</p>
 <h3>5. Challenge bundled lines</h3>

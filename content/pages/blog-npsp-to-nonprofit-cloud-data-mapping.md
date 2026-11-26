@@ -68,7 +68,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <h2 id="the-three-decisions-that-need-the-most-thought">The three decisions that need the most thought</h2>
 <h3>1. Households</h3>
 <p>In NPSP, a household is an Account that Contacts belong to, and many reports, greetings and rollups hang off it. In Nonprofit Cloud, people are Person Accounts and the household is a Party Relationship Group that links them. Decide early how you will name households, which person is primary, and how household-level giving totals will be reported. Test this on twenty real households before you load thousands.</p>
-<p>Person Accounts also change how access works, because one record now carries both account and contact permissions. Our post on <a href="/blog/salesforce-person-accounts-access.html">Person Accounts and access</a> explains what to check.</p>
+<p>Person Accounts also change how access works, because one record now carries both account and contact permissions. Our post on <a href="/products/who-sees-what/blogs/salesforce-person-accounts-access.html">Person Accounts and access</a> explains what to check.</p>
 <h3>2. Pledges and recurring gifts</h3>
 <p>An NPSP pledge is usually an Opportunity with several Payments. In Nonprofit Cloud the promise and the payments are separate: a Gift Commitment holds the promise, and each payment is a Gift Transaction. Recurring Donations follow the same pattern, with a Gift Commitment Schedule generating expected transactions that start as Unpaid. Decide how far back to recreate schedules, and how to treat lapsed or closed recurring donations.</p>
 <h3>3. Fund designations</h3>
@@ -86,7 +86,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <li><strong>Gift Transaction Designations, Soft Credits and Tributes.</strong></li>
 <li><strong>Programmes, Benefits, Enrollments and Disbursements</strong>, if you are moving PMM data.</li>
 </ol>
-<p>Every load references the previous ones by External ID rather than by Salesforce record ID. That way you never have to export, VLOOKUP and re-import IDs between passes. Our free <a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader</a> resolves lookups by name or code during the import, and our guide to <a href="/blog/salesforce-upsert-csv-explained.html">upserts and match keys</a> explains the approach.</p>
+<p>Every load references the previous ones by External ID rather than by Salesforce record ID. That way you never have to export, VLOOKUP and re-import IDs between passes. Our free <a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader</a> resolves lookups by name or code during the import, and our guide to <a href="/products/smart-lookup-data-loader/blogs/salesforce-upsert-csv-explained.html">upserts and match keys</a> explains the approach.</p>
 <h2 id="keep-a-crosswalk-and-reconcile-every-rehearsal">Keep a crosswalk and reconcile every rehearsal</h2>
 <p>Store the old NPSP record ID on every migrated record. After each rehearsal, compare:</p>
 <ul>

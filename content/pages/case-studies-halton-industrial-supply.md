@@ -111,7 +111,7 @@ scriptBodyClass: font-sans antialiased text-slate-800
                 <p><strong>Attribution blindness.</strong> Website, trade show QR codes and email signature links all pointed at the same form. Marketing knew the total and could not allocate spend. The trade show budget had been renewed twice without evidence.</p>
                 <h2>What options were evaluated?</h2>
                 <h3>Web-to-Lead</h3>
-                <p>The obvious free fix. Rejected on two hard requirements. The form uses conditional logic to ask different follow-up questions depending on product category, which Web-to-Lead cannot do. And the QR code and email signature channels need a shareable link rather than a form embedded in a hosted page. We compare the two approaches in detail in <a href="/blog/google-forms-vs-web-to-lead.html">Google Forms vs Web-to-Lead</a>.</p>
+                <p>The obvious free fix. Rejected on two hard requirements. The form uses conditional logic to ask different follow-up questions depending on product category, which Web-to-Lead cannot do. And the QR code and email signature channels need a shareable link rather than a form embedded in a hosted page. We compare the two approaches in detail in <a href="/products/google-form-auto-sync/blogs/google-forms-vs-web-to-lead.html">Google Forms vs Web-to-Lead</a>.</p>
                 <h3>Automation platform</h3>
                 <p>Quoted at approximately $3,000 per year. The objection that carried was structural rather than financial, raised by the sales operations lead: volume-based pricing on a lead capture system means a strong quarter increases cost. Nobody could articulate why that incentive was desirable.</p>
                 <h3>Native AppExchange app</h3>

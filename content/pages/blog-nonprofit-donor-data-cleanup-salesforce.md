@@ -73,7 +73,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <li>email alone, where emails are reliable</li>
 <li>phone number, normalised to one format</li>
 </ul>
-<p>Review probable duplicates with staff who know the donors before merging. Two records with the same name and address may be a parent and child. Our post on <a href="/blog/salesforce-duplicate-records-match-fields.html">why single-field matching creates duplicates</a> explains how to pick match keys that hold up.</p>
+<p>Review probable duplicates with staff who know the donors before merging. Two records with the same name and address may be a parent and child. Our post on <a href="/products/smart-lookup-data-loader/blogs/salesforce-duplicate-records-match-fields.html">why single-field matching creates duplicates</a> explains how to pick match keys that hold up.</p>
 <h2 id="step-3-rebuild-households-deliberately">Step 3: rebuild households deliberately</h2>
 <p>Households drive greetings, acknowledgement letters and household giving totals, so they are worth getting right.</p>
 <ul>
@@ -108,7 +108,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 </ul>
 <p>Archive them with the old system's export rather than deleting them outright. Keep the archive somewhere your team can find it.</p>
 <h2 id="step-7-prepare-files-that-load-cleanly">Step 7: prepare files that load cleanly</h2>
-<p>Most import failures are file problems: encodings, date formats, picklist values that do not exist, and text that is longer than the target field. Our <a href="/blog/salesforce-csv-import-file-preparation.html">CSV preparation checklist</a> covers each one. When you load, reference related records by your stable IDs, not by Salesforce record IDs, so you are not exporting and VLOOKUP-ing between passes. Our free <a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader</a> resolves lookups by name or code during import.</p>
+<p>Most import failures are file problems: encodings, date formats, picklist values that do not exist, and text that is longer than the target field. Our <a href="/products/smart-lookup-data-loader/blogs/salesforce-csv-import-file-preparation.html">CSV preparation checklist</a> covers each one. When you load, reference related records by your stable IDs, not by Salesforce record IDs, so you are not exporting and VLOOKUP-ing between passes. Our free <a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader</a> resolves lookups by name or code during import.</p>
 <h2 id="what-our-illustrative-migration-taught-us">What our illustrative migration taught us</h2>
 <p>In our illustrative <a href="/case-studies/riverbend-community-trust-npsp-migration.html">Riverbend Community Trust case study</a>, the team tried to standardise addresses during the migration. It mixed two problems together, because a record that failed could have failed for either reason. The address work was moved into its own project after go-live. Keep clean-up and migration apart.</p>
                 <h2 id="faq">Frequently asked questions</h2>

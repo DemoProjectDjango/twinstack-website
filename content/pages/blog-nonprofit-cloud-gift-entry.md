@@ -86,7 +86,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <li><strong>Tributes:</strong> use Gift Tribute for gifts in honour or memory of someone, so acknowledgement letters can draw on it.</li>
 </ul>
 <h2 id="getting-gifts-into-gift-entry-from-other-sources">Getting gifts into Gift Entry from other sources</h2>
-<p>Online donations from forms or payment platforms are best routed into Gift Entry rather than straight into Gift Transactions, so they get the same matching and checks. If your forms are Google Forms, our free <a href="/products/google-form-auto-sync.html">Google Form Auto Sync</a> brings submissions into Salesforce natively. For historic gifts during a migration, load directly using the order in our <a href="/blog/npsp-to-nonprofit-cloud-data-mapping.html">data mapping guide</a>.</p>
+<p>Online donations from forms or payment platforms are best routed into Gift Entry rather than straight into Gift Transactions, so they get the same matching and checks. If your forms are Google Forms, our free <a href="/products/google-form-auto-sync/">Google Form Auto Sync</a> brings submissions into Salesforce natively. For historic gifts during a migration, load directly using the order in our <a href="/blog/npsp-to-nonprofit-cloud-data-mapping.html">data mapping guide</a>.</p>
 <h2 id="five-gift-processing-habits-worth-keeping">Five gift processing habits worth keeping</h2>
 <ol>
 <li>One batch per deposit, so batch totals reconcile to the bank.</li>

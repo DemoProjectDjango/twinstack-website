@@ -163,7 +163,7 @@ scriptBodyClass: font-sans antialiased text-slate-800
                     <p class="imp-text-brand-800 imp-mb-4">Smart Lookup Data Loader is a free, 100% native Salesforce app by TwinStack. Lookups resolve as records land, upserts match on several fields, and every failed row tells you why.</p>
                     <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=f020d7cb-6467-4dcc-adda-c1ce6c620257" target="_blank" rel="noopener" class="imp-inline-block imp-px-6 imp-py-3 imp-bg-brand-600 imp-text-white imp-font-semibold imp-rounded-lg imp-hover:bg-brand-700 imp-transition">Get It Now, Free</a>
                 </div>
-                <div class="imp-ts-keep"><h2>Keep reading</h2><ul><li><a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader: features and how it works</a></li><li><a href="/blog/what-is-smart-lookup-data-loader.html">What Is Smart Lookup Data Loader?</a></li><li><a href="/case-studies.html">More case studies</a></li></ul></div>
+                <div class="imp-ts-keep"><h2>Keep reading</h2><ul><li><a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader: features and how it works</a></li><li><a href="/products/smart-lookup-data-loader/blogs/what-is-smart-lookup-data-loader.html">What Is Smart Lookup Data Loader?</a></li><li><a href="/case-studies.html">More case studies</a></li></ul></div>
             </article>
             <div class="imp-mt-16 imp-pt-8 imp-border-t imp-border-slate-200">
                 <a href="/case-studies.html" class="imp-inline-flex imp-items-center imp-gap-2 imp-text-brand-600 imp-font-bold imp-hover:underline">

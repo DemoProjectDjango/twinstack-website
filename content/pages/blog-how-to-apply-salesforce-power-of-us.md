@@ -91,8 +91,8 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <h2 id="after-approval-what-to-do-first">After approval: what to do first</h2>
 <ul>
 <li><strong>Do not start building in production straight away.</strong> Decide what you need Salesforce to do in phase one, usually donors and volunteers, and keep the first phase small.</li>
-<li><strong>Set up security basics:</strong> multi-factor authentication, a named admin, and a plan for who sees what. Our free <a href="/products/who-sees-what.html">Who Sees What</a> helps you check access as you add users.</li>
-<li><strong>Plan your data move.</strong> Most charities arrive with spreadsheets. Our guides to <a href="/blog/nonprofit-salesforce-data-import.html">nonprofit data imports</a> and <a href="/blog/nonprofit-donor-data-cleanup-salesforce.html">donor data clean-up</a> cover the approach.</li>
+<li><strong>Set up security basics:</strong> multi-factor authentication, a named admin, and a plan for who sees what. Our free <a href="/products/who-sees-what/">Who Sees What</a> helps you check access as you add users.</li>
+<li><strong>Plan your data move.</strong> Most charities arrive with spreadsheets. Our guides to <a href="/products/smart-lookup-data-loader/blogs/nonprofit-salesforce-data-import.html">nonprofit data imports</a> and <a href="/blog/nonprofit-donor-data-cleanup-salesforce.html">donor data clean-up</a> cover the approach.</li>
 <li><strong>Budget for help where you need it.</strong> Run the <a href="/cost-estimator.html">cost estimator</a>, choose nonprofit, and it applies the 10 free licences automatically.</li>
 </ul>
 <h2 id="common-reasons-applications-are-delayed">Common reasons applications are delayed</h2>

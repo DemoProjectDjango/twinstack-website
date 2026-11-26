@@ -43,7 +43,7 @@
     },
     "products": {
       "dir": "content/products",
-      "urlPattern": "/products/:slug.html",
+      "urlPattern": "/products/:slug/",
       "layout": "page",
       "sort": "order",
       "index": {

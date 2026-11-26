@@ -1,7 +1,7 @@
 ---
 title: Why Native Salesforce Forms Beat a Form Tool Plus a Connector
 slug: blog-native-salesforce-forms
-url: /blog/native-salesforce-forms.html
+url: /products/smart-forms-surveys/blogs/native-salesforce-forms.html
 order: 50
 description: Form tools plus connectors add hops between visitors and your CRM. See how Smart Forms & Surveys creates Salesforce records directly from public forms.
 date: 2026-11-11
@@ -154,13 +154,13 @@ tags:
     <h2 class="text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl">Related reading</h2>
     <ul class="mt-6 grid gap-4 sm:grid-cols-2">
       <li>
-        <a href="/blog/build-public-salesforce-form.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand hover:shadow-lg hover:shadow-zinc-900/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+        <a href="/products/smart-forms-surveys/blogs/build-public-salesforce-form.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand hover:shadow-lg hover:shadow-zinc-900/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0">
           <span>How to Build a Public Salesforce Form in Five Steps (No Code)</span>
           <svg class="mt-1 h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </li>
       <li>
-        <a href="/blog/secure-public-salesforce-forms.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand hover:shadow-lg hover:shadow-zinc-900/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+        <a href="/products/smart-forms-surveys/blogs/secure-public-salesforce-forms.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:-translate-y-0.5 hover:border-brand/40 hover:text-brand hover:shadow-lg hover:shadow-zinc-900/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand motion-reduce:transition-none motion-reduce:hover:translate-y-0">
           <span>Public Salesforce Forms Without the Anxiety: Spam, Uploads and Guest Access</span>
           <svg class="mt-1 h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>

@@ -92,7 +92,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <li><strong>Clean your donor data.</strong> Deduplicate, standardise addresses and fix household structures. See <a href="/blog/nonprofit-donor-data-cleanup-salesforce.html">donor data clean-up before a Salesforce migration</a>.</li>
 <li><strong>Document your automations.</strong> List every flow, process, trigger and integration and what it is for. This list becomes your rebuild scope.</li>
 <li><strong>Stop adding custom objects</strong> where a Nonprofit Cloud standard object will exist later.</li>
-<li><strong>Retire what nobody uses:</strong> unused fields, reports and permission sets. Our <a href="/blog/how-to-run-a-salesforce-access-review.html">access review guide</a> helps with the permissions side.</li>
+<li><strong>Retire what nobody uses:</strong> unused fields, reports and permission sets. Our <a href="/products/who-sees-what/blogs/how-to-run-a-salesforce-access-review.html">access review guide</a> helps with the permissions side.</li>
 </ul>
 <h2 id="what-to-do-now-if-you-decide-to-move">What to do now if you decide to move</h2>
 <p>Start with a scope, not a quote. Map your current objects to their Nonprofit Cloud equivalents using our <a href="/blog/npsp-to-nonprofit-cloud-data-mapping.html">data mapping guide</a>, then price the hours with our <a href="/blog/npsp-to-nonprofit-cloud-migration-cost-timeline.html">timeline and cost guide</a>. If you need a partner, our <a href="/blog/choosing-a-nonprofit-salesforce-consultant.html">ten questions for choosing a nonprofit Salesforce consultant</a> will help you compare proposals.</p>

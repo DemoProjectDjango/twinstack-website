@@ -513,7 +513,7 @@ function serviceCards(rec,s){
     link:["/case-studies","See projects like this"]});
   if(s.datanow==="sheets")cards.push({c:"svc",l:"Data migration from spreadsheets",m:"Clean, map and import",
     why:"We clean and de-duplicate your spreadsheets, map every column to the right Salesforce field and load it with related records correctly linked. Our free Smart Lookup Data Loader app makes repeat imports easy afterwards.",
-    link:["/products/smart-lookup-data-loader","About Smart Lookup Data Loader"]});
+    link:["/products/smart-lookup-data-loader/","About Smart Lookup Data Loader"]});
   else if(s.datanow==="crm")cards.push({c:"svc",l:"Data migration from your current CRM",m:"Extract, de-duplicate, map, validate",
     why:"Moving from another CRM means extracting the data, de-duplicating it, mapping it to Salesforce's structure and checking every record count before cut-over."});
   else if(s.datanow==="many")cards.push({c:"svc",l:"Data consolidation from several systems",m:"Multi-source migration",
@@ -539,10 +539,10 @@ function serviceCards(rec,s){
     why:"We check your eligibility, submit the application and set up your 10 donated licences at no charge."});
   if(has("volunteers")||has("events")||has("members")||has("leads"))cards.push({c:"app",l:"Google Form Auto Sync",m:"Free TwinStack app",
     why:"If sign-ups or enquiries come in through Google Forms, this free app turns every response into a Salesforce record the moment it is submitted.",
-    link:["/products/google-form-auto-sync","About Google Form Auto Sync"]}); if(has("volunteers")||has("events")||has("members")||has("leads"))cards.push({c:"app",l:"Smart Forms & Surveys",m:"Free TwinStack app", why:"Need a public sign-up, registration or enquiry form? Build it inside Salesforce with this free app, and every submission creates a record directly.", link:["/products/smart-forms-surveys","About Smart Forms & Surveys"]});
+    link:["/products/google-form-auto-sync/","About Google Form Auto Sync"]}); if(has("volunteers")||has("events")||has("members")||has("leads"))cards.push({c:"app",l:"Smart Forms & Surveys",m:"Free TwinStack app", why:"Need a public sign-up, registration or enquiry form? Build it inside Salesforce with this free app, and every submission creates a record directly.", link:["/products/smart-forms-surveys/","About Smart Forms & Surveys"]});
   if(s.users>=15||s.ext!=="none")cards.push({c:"app",l:"Who Sees What",m:"Free TwinStack app",
     why:"As your team grows, this free app shows exactly what any user can see and which rule granted it, so access reviews take minutes.",
-    link:["/products/who-sees-what","About Who Sees What"]});
+    link:["/products/who-sees-what/","About Who Sees What"]});
   return cards;
 }
 function card(it){

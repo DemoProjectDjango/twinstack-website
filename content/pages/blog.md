@@ -209,10 +209,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/formassembly-in-the-real-world.html">FormAssembly in the Real World: Lessons from Live Salesforce Projects</a>
+                                <a href="/products/smart-forms-surveys/blogs/formassembly-in-the-real-world.html">FormAssembly in the Real World: Lessons from Live Salesforce Projects</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A practical look at the form platform that connects web forms to Salesforce: how it works, where it shines, and where it falls short.</p>
-                            <a href="/blog/formassembly-in-the-real-world.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read FormAssembly in the Real World">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-forms-surveys/blogs/formassembly-in-the-real-world.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read FormAssembly in the Real World">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-sfs">
@@ -222,10 +222,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/native-salesforce-forms.html">Why Native Salesforce Forms Beat a Form Tool Plus a Connector</a>
+                                <a href="/products/smart-forms-surveys/blogs/native-salesforce-forms.html">Why Native Salesforce Forms Beat a Form Tool Plus a Connector</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Form tools plus connectors add hops between visitors and your CRM. See how Smart Forms & Surveys creates Salesforce records directly from public forms.</p>
-                            <a href="/blog/native-salesforce-forms.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why Native Salesforce Forms Beat a Form Tool Plus a Connector">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-forms-surveys/blogs/native-salesforce-forms.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why Native Salesforce Forms Beat a Form Tool Plus a Connector">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-sfs">
@@ -235,10 +235,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/build-public-salesforce-form.html">How to Build a Public Salesforce Form in Five Steps (No Code)</a>
+                                <a href="/products/smart-forms-surveys/blogs/build-public-salesforce-form.html">How to Build a Public Salesforce Form in Five Steps (No Code)</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A step-by-step guide to building a public Salesforce form with Smart Forms & Surveys: setup, fields, conditional questions, sharing and reviewing submissions.</p>
-                            <a href="/blog/build-public-salesforce-form.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Build a Public Salesforce Form in Five Steps">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-forms-surveys/blogs/build-public-salesforce-form.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Build a Public Salesforce Form in Five Steps">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-sfs">
@@ -248,10 +248,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/secure-public-salesforce-forms.html">Public Salesforce Forms Without the Anxiety: Spam, Uploads and Guest Access</a>
+                                <a href="/products/smart-forms-surveys/blogs/secure-public-salesforce-forms.html">Public Salesforce Forms Without the Anxiety: Spam, Uploads and Guest Access</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A public form is open to everyone. Here are the layers that protect your Salesforce org: spam checks, upload limits, create-only access and permission sets.</p>
-                            <a href="/blog/secure-public-salesforce-forms.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Public Salesforce Forms Without the Anxiety">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-forms-surveys/blogs/secure-public-salesforce-forms.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Public Salesforce Forms Without the Anxiety">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
 <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-voice imp-guide">
@@ -547,10 +547,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-forms-to-salesforce-nonprofits-npsp.html">Google Forms to Salesforce for Nonprofits</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-forms-to-salesforce-nonprofits-npsp.html">Google Forms to Salesforce for Nonprofits</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Nonprofits run on Google Forms and Salesforce, with a volunteer and a spreadsheet in between. A free, native way to close that gap in NPSP or Nonprofit Cloud.</p>
-                            <a href="/blog/google-forms-to-salesforce-nonprofits-npsp.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Google Forms to Salesforce for Nonprofits">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-forms-to-salesforce-nonprofits-npsp.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Google Forms to Salesforce for Nonprofits">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -573,10 +573,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/what-is-who-sees-what.html">What Is Who Sees What? Free Salesforce Permission Inspector</a>
+                                <a href="/products/who-sees-what/blogs/what-is-who-sees-what.html">What Is Who Sees What? Free Salesforce Permission Inspector</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A free, native, read-only Salesforce app. Pick any user and see every object, field and record they can reach, plus the rule that granted it.</p>
-                            <a href="/blog/what-is-who-sees-what.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read What Is Who Sees What? Free Salesforce Permission Inspector">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/what-is-who-sees-what.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read What Is Who Sees What? Free Salesforce Permission Inspector">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-guide">
@@ -586,10 +586,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/what-is-smart-lookup-data-loader.html">What Is Smart Lookup Data Loader?</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/what-is-smart-lookup-data-loader.html">What Is Smart Lookup Data Loader?</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Smart Lookup Data Loader is a free, native Salesforce app that imports CSV data and resolves lookup relationships by name or code instead of record ID.</p>
-                            <a href="/blog/what-is-smart-lookup-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read What Is Smart Lookup Data Loader?">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/what-is-smart-lookup-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read What Is Smart Lookup Data Loader?">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-tips">
@@ -599,10 +599,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-duplicate-records-match-fields.html">Single-Field Matching Creates Duplicates</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-duplicate-records-match-fields.html">Single-Field Matching Creates Duplicates</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Most duplicate records created during a Salesforce import come from matching on one field. Here is how to choose a match key that holds up.</p>
-                            <a href="/blog/salesforce-duplicate-records-match-fields.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Single-Field Matching Creates Duplicates">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-duplicate-records-match-fields.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Single-Field Matching Creates Duplicates">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-guide">
@@ -612,10 +612,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-import-vlookup-record-ids.html">Why Bulk Imports Start With a VLOOKUP</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-import-vlookup-record-ids.html">Why Bulk Imports Start With a VLOOKUP</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Salesforce lookup fields expect record IDs, so most bulk imports begin with a VLOOKUP. Here is why that step exists and how to remove it entirely.</p>
-                            <a href="/blog/salesforce-import-vlookup-record-ids.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why Bulk Imports Start With a VLOOKUP">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-import-vlookup-record-ids.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why Bulk Imports Start With a VLOOKUP">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -638,10 +638,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-forms-vs-web-to-lead.html">Google Forms vs Salesforce Web-to-Lead: Which Should You Use?</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-forms-vs-web-to-lead.html">Google Forms vs Salesforce Web-to-Lead: Which Should You Use?</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Web-to-Lead is free and built in. Google Forms is flexible and fast. An honest comparison, and how to get the best of both.</p>
-                            <a href="/blog/google-forms-vs-web-to-lead.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Google Forms vs Salesforce Web-to-Lead: Which Should You Use?">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-forms-vs-web-to-lead.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Google Forms vs Salesforce Web-to-Lead: Which Should You Use?">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-tips">
@@ -651,10 +651,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-import-error-reporting.html">Reading a Failed Salesforce Import</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-import-error-reporting.html">Reading a Failed Salesforce Import</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A failed Salesforce import is a diagnosis problem before it is a data problem. How to read row-level errors and fix only what actually failed.</p>
-                            <a href="/blog/salesforce-import-error-reporting.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Reading a Failed Salesforce Import">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-import-error-reporting.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Reading a Failed Salesforce Import">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-wsw">
@@ -664,10 +664,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/why-salesforce-access-questions-take-so-long.html">Why a Salesforce Access Question Takes an Afternoon</a>
+                                <a href="/products/who-sees-what/blogs/why-salesforce-access-questions-take-so-long.html">Why a Salesforce Access Question Takes an Afternoon</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Salesforce access spans six systems and no Setup screen shows all six for one user. Why the reconstruction takes thirty minutes, and what fixes it.</p>
-                            <a href="/blog/why-salesforce-access-questions-take-so-long.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why a Salesforce Access Question Takes an Afternoon">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/why-salesforce-access-questions-take-so-long.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why a Salesforce Access Question Takes an Afternoon">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-guide">
@@ -677,10 +677,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-data-import-wizard-vs-data-loader.html">Import Wizard vs Data Loader vs Smart Lookup</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-data-import-wizard-vs-data-loader.html">Import Wizard vs Data Loader vs Smart Lookup</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Data Import Wizard, Data Loader and Smart Lookup Data Loader solve different import problems. A practical comparison of limits, lookups and errors.</p>
-                            <a href="/blog/salesforce-data-import-wizard-vs-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Import Wizard vs Data Loader vs Smart Lookup">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-data-import-wizard-vs-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Import Wizard vs Data Loader vs Smart Lookup">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -703,10 +703,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-upsert-csv-explained.html">Salesforce Upsert Explained</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-upsert-csv-explained.html">Salesforce Upsert Explained</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Upsert updates existing Salesforce records and creates new ones in a single import. How the match key works and where upserts go wrong.</p>
-                            <a href="/blog/salesforce-upsert-csv-explained.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Salesforce Upsert Explained">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-upsert-csv-explained.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Salesforce Upsert Explained">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-integration imp-gfas">
@@ -716,10 +716,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-sheets-salesforce-sync-problems.html">Why Routing Google Forms Through Google Sheets to Salesforce Breaks</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-sheets-salesforce-sync-problems.html">Why Routing Google Forms Through Google Sheets to Salesforce Breaks</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Using a Google Sheet as a staging layer is the most common approach and the most fragile. Five ways it fails quietly, and what to do instead.</p>
-                            <a href="/blog/google-sheets-salesforce-sync-problems.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why Routing Google Forms Through Google Sheets to Salesforce Breaks">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-sheets-salesforce-sync-problems.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Why Routing Google Forms Through Google Sheets to Salesforce Breaks">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-tips">
@@ -729,10 +729,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-csv-import-file-preparation.html">How to Prepare a CSV for Salesforce Import</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-csv-import-file-preparation.html">How to Prepare a CSV for Salesforce Import</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Most Salesforce import failures are file problems. A practical checklist for encoding, dates, picklists, lookups and field lengths before you load.</p>
-                            <a href="/blog/salesforce-csv-import-file-preparation.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Prepare a CSV for Salesforce Import">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-csv-import-file-preparation.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Prepare a CSV for Salesforce Import">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-productivity">
@@ -742,10 +742,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/free-salesforce-data-loader.html">What Free Actually Means for Data Loaders</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/free-salesforce-data-loader.html">What Free Actually Means for Data Loaders</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Free Salesforce data loaders range from genuinely free to trial-limited. How to check for row caps, user limits and paid tiers before you commit.</p>
-                            <a href="/blog/free-salesforce-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read What Free Actually Means for Data Loaders">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/free-salesforce-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read What Free Actually Means for Data Loaders">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -768,10 +768,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/find-over-permissioned-salesforce-users.html">Finding Over-Permissioned Salesforce Users Before an Audit</a>
+                                <a href="/products/who-sees-what/blogs/find-over-permissioned-salesforce-users.html">Finding Over-Permissioned Salesforce Users Before an Audit</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Permission drift accumulates silently in every mature Salesforce org. A five-step review for finding it yourself, before a compliance audit does.</p>
-                            <a href="/blog/find-over-permissioned-salesforce-users.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Finding Over-Permissioned Salesforce Users Before an Audit">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/find-over-permissioned-salesforce-users.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Finding Over-Permissioned Salesforce Users Before an Audit">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-productivity">
@@ -781,10 +781,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-data-loader-no-java.html">Importing Into Salesforce Without Java</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/salesforce-data-loader-no-java.html">Importing Into Salesforce Without Java</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">The standard Salesforce Data Loader is desktop software with a Java dependency. Here are the browser-based options and what each one gives up.</p>
-                            <a href="/blog/salesforce-data-loader-no-java.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Importing Into Salesforce Without Java">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/salesforce-data-loader-no-java.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Importing Into Salesforce Without Java">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-sldl imp-guide">
@@ -794,10 +794,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/nonprofit-salesforce-data-import.html">Nonprofit Data Imports Into NPSP</a>
+                                <a href="/products/smart-lookup-data-loader/blogs/nonprofit-salesforce-data-import.html">Nonprofit Data Imports Into NPSP</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Importing donors and constituents into NPSP or Nonprofit Cloud brings relationship problems standard loaders were not built for. A practical approach.</p>
-                            <a href="/blog/nonprofit-salesforce-data-import.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Nonprofit Data Imports Into NPSP">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/smart-lookup-data-loader/blogs/nonprofit-salesforce-data-import.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Nonprofit Data Imports Into NPSP">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-gfas">
@@ -807,10 +807,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-forms-salesforce-integration-security.html">Is Your Google Forms Integration Secure? Six Questions to Ask</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-forms-salesforce-integration-security.html">Is Your Google Forms Integration Secure? Six Questions to Ask</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Every form integration puts your data on a path. Six questions to ask about any connector before your compliance team asks them for you.</p>
-                            <a href="/blog/google-forms-salesforce-integration-security.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Is Your Google Forms Integration Secure? Six Questions to Ask">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-forms-salesforce-integration-security.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Is Your Google Forms Integration Secure? Six Questions to Ask">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -833,10 +833,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/which-rule-granted-salesforce-access.html">Which Rule Granted Salesforce Access? How to Trace It</a>
+                                <a href="/products/who-sees-what/blogs/which-rule-granted-salesforce-access.html">Which Rule Granted Salesforce Access? How to Trace It</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Profile, permission set, role or sharing rule: how to trace which one granted a user's access, layer by layer, and turn an assertion into evidence.</p>
-                            <a href="/blog/which-rule-granted-salesforce-access.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Which Rule Granted Salesforce Access? How to Trace It">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/which-rule-granted-salesforce-access.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Which Rule Granted Salesforce Access? How to Trace It">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-wsw">
@@ -846,10 +846,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/how-to-run-a-salesforce-access-review.html">How to Run a Salesforce Access Review Without Losing a Day</a>
+                                <a href="/products/who-sees-what/blogs/how-to-run-a-salesforce-access-review.html">How to Run a Salesforce Access Review Without Losing a Day</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A seven-step process for a Salesforce access review that covers the whole user base, not a sample, and the one step that makes that possible.</p>
-                            <a href="/blog/how-to-run-a-salesforce-access-review.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Run a Salesforce Access Review Without Losing a Day">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/how-to-run-a-salesforce-access-review.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Run a Salesforce Access Review Without Losing a Day">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -872,10 +872,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-forms-salesforce-methods-compared.html">Google Forms to Salesforce: Every Method Compared</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-forms-salesforce-methods-compared.html">Google Forms to Salesforce: Every Method Compared</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Zapier, Make, Pabbly, Sheets connectors, Web-to-Lead, custom code or a native app. Seven methods compared, including the ones we do not sell.</p>
-                            <a href="/blog/google-forms-salesforce-methods-compared.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Google Forms to Salesforce: Every Method Compared">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-forms-salesforce-methods-compared.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Google Forms to Salesforce: Every Method Compared">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-tips imp-wsw">
@@ -885,10 +885,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-object-field-record-access.html">Salesforce Object, Field and Record Access Explained</a>
+                                <a href="/products/who-sees-what/blogs/salesforce-object-field-record-access.html">Salesforce Object, Field and Record Access Explained</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Salesforce checks access at three independent levels and all three must pass. Confusing them is the most common cause of a fix that fixes nothing.</p>
-                            <a href="/blog/salesforce-object-field-record-access.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Salesforce Object, Field and Record Access Explained">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/salesforce-object-field-record-access.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Salesforce Object, Field and Record Access Explained">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -911,10 +911,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-form-workflows-salesforce-admin.html">9 Google Form Workflows Every Salesforce Admin Should Automate</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-form-workflows-salesforce-admin.html">9 Google Form Workflows Every Salesforce Admin Should Automate</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Your organisation probably has a dozen Google Forms feeding nothing. Nine worth connecting, and what to build on the other side of each.</p>
-                            <a href="/blog/google-form-workflows-salesforce-admin.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read 9 Google Form Workflows Every Salesforce Admin Should Automate">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-form-workflows-salesforce-admin.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read 9 Google Form Workflows Every Salesforce Admin Should Automate">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-productivity imp-wsw">
@@ -924,10 +924,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-onboarding-offboarding-access-verification.html">Onboarding and Offboarding: Verify Access Actually Changed</a>
+                                <a href="/products/who-sees-what/blogs/salesforce-onboarding-offboarding-access-verification.html">Onboarding and Offboarding: Verify Access Actually Changed</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Assigning or removing permission sets is configuration, not confirmation. What to verify on both sides so a leaver doesn't quietly keep access.</p>
-                            <a href="/blog/salesforce-onboarding-offboarding-access-verification.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Onboarding and Offboarding: Verify Access Actually Changed">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/salesforce-onboarding-offboarding-access-verification.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Onboarding and Offboarding: Verify Access Actually Changed">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-tips imp-wsw">
@@ -937,10 +937,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-permission-set-cleanup.html">Permission Set Sprawl: How to Clean Up Without Breaking Access</a>
+                                <a href="/products/who-sees-what/blogs/salesforce-permission-set-cleanup.html">Permission Set Sprawl: How to Clean Up Without Breaking Access</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A permission set that looks redundant can't be safely deleted by name. A five-step process for cleanup without breaking access for users still assigned.</p>
-                            <a href="/blog/salesforce-permission-set-cleanup.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Permission Set Sprawl: How to Clean Up Without Breaking Access">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/salesforce-permission-set-cleanup.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Permission Set Sprawl: How to Clean Up Without Breaking Access">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -963,10 +963,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-forms-to-salesforce-without-zapier.html">How to Send Google Form Responses to Salesforce Without Zapier</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-forms-to-salesforce-without-zapier.html">How to Send Google Form Responses to Salesforce Without Zapier</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Four real alternatives to middleware, honestly assessed, plus a side by side comparison and a safe way to migrate off your existing Zaps.</p>
-                            <a href="/blog/google-forms-to-salesforce-without-zapier.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about sending Google Form responses to Salesforce without Zapier">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-forms-to-salesforce-without-zapier.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about sending Google Form responses to Salesforce without Zapier">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-tips imp-gfas">
@@ -976,10 +976,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/google-form-response-to-salesforce-lead-flow.html">How to Turn Google Form Responses into Salesforce Leads with Flow</a>
+                                <a href="/products/google-form-auto-sync/blogs/google-form-response-to-salesforce-lead-flow.html">How to Turn Google Form Responses into Salesforce Leads with Flow</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A practical walkthrough for routing captured submissions from Form_Response__c into Leads, Cases or Campaign Members with a record-triggered Flow.</p>
-                            <a href="/blog/google-form-response-to-salesforce-lead-flow.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Turn Google Form Responses into Salesforce Leads with Flow">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/google-form-response-to-salesforce-lead-flow.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read How to Turn Google Form Responses into Salesforce Leads with Flow">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -1002,10 +1002,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-person-accounts-access.html">Person Accounts and Access: Why It's Harder to See</a>
+                                <a href="/products/who-sees-what/blogs/salesforce-person-accounts-access.html">Person Accounts and Access: Why It's Harder to See</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A Person Account is one record governed by two object models at once. Why effective access is harder to diagnose, and what a tool needs to get right.</p>
-                            <a href="/blog/salesforce-person-accounts-access.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Person Accounts and Access: Why It's Harder to See">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/salesforce-person-accounts-access.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Person Accounts and Access: Why It's Harder to See">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-gfas">
@@ -1015,10 +1015,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/free-google-forms-salesforce-integration.html">Free Google Forms to Salesforce Integration: What "Free" Actually Means</a>
+                                <a href="/products/google-form-auto-sync/blogs/free-google-forms-salesforce-integration.html">Free Google Forms to Salesforce Integration: What "Free" Actually Means</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Most free integrations are trials or capped tiers. How to tell them apart, five questions to ask, and what a year actually costs.</p>
-                            <a href="/blog/free-google-forms-salesforce-integration.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about free Google Forms to Salesforce integration">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/free-google-forms-salesforce-integration.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about free Google Forms to Salesforce integration">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-cost imp-guide">
@@ -1041,10 +1041,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-access-tools-compared.html">Who Sees What vs Setup Screens vs a Spreadsheet Audit</a>
+                                <a href="/products/who-sees-what/blogs/salesforce-access-tools-compared.html">Who Sees What vs Setup Screens vs a Spreadsheet Audit</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Three honest ways to answer a Salesforce access question compared: native Setup screens, a manual spreadsheet audit, and a purpose-built person-first tool.</p>
-                            <a href="/blog/salesforce-access-tools-compared.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Who Sees What vs Setup Screens vs a Spreadsheet Audit">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/salesforce-access-tools-compared.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read Who Sees What vs Setup Screens vs a Spreadsheet Audit">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-gfas">
@@ -1054,10 +1054,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/what-is-google-form-auto-sync.html">What Is Google Form Auto Sync?</a>
+                                <a href="/products/google-form-auto-sync/blogs/what-is-google-form-auto-sync.html">What Is Google Form Auto Sync?</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Everything you need to know before you install: what it does, who it is for, how it works, and what it costs.</p>
-                            <a href="/blog/what-is-google-form-auto-sync.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about what Google Form Auto Sync is">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/what-is-google-form-auto-sync.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about what Google Form Auto Sync is">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-wsw">
@@ -1067,10 +1067,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/salesforce-effective-access-use-cases.html">7 Moments When You Need to Know a Salesforce User's Access</a>
+                                <a href="/products/who-sees-what/blogs/salesforce-effective-access-use-cases.html">7 Moments When You Need to Know a Salesforce User's Access</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A missing-access report, a scheduled review, onboarding, offboarding, cleanup, a handover. Seven contexts that all reduce to the same underlying question.</p>
-                            <a href="/blog/salesforce-effective-access-use-cases.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read 7 Moments When You Need to Know a Salesforce User's Access">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/who-sees-what/blogs/salesforce-effective-access-use-cases.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read 7 Moments When You Need to Know a Salesforce User's Access">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                     <article class="imp-blog-card imp-bg-white imp-rounded-xl imp-shadow-md imp-border imp-border-slate-100 imp-overflow-hidden imp-flex imp-flex-col imp-h-full imp-interactive-element imp-filter-item imp-guide imp-integration imp-gfas">
@@ -1080,10 +1080,10 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         </div>
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/blog/how-to-sync-google-forms-to-salesforce.html">How to Sync Google Forms to Salesforce</a>
+                                <a href="/products/google-form-auto-sync/blogs/how-to-sync-google-forms-to-salesforce.html">How to Sync Google Forms to Salesforce</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">A free, 100% native guide. No Zapier, no middleware, no spreadsheets. Compare the four real options, then set the native one up step by step.</p>
-                            <a href="/blog/how-to-sync-google-forms-to-salesforce.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about how to sync Google Forms to Salesforce">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                            <a href="/products/google-form-auto-sync/blogs/how-to-sync-google-forms-to-salesforce.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-mt-auto imp-hover:text-brand-800 imp-transition" aria-label="Read more about how to sync Google Forms to Salesforce">Read More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                         </div>
                     </article>
                 </div>

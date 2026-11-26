@@ -103,11 +103,11 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <span class="imp-ts-kicker">Native forms. Real records.</span>
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/products/smart-forms-surveys.html">Smart Forms &amp; Surveys</a>
+                                <a href="/products/smart-forms-surveys/">Smart Forms &amp; Surveys</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Build public web forms and surveys with a drag-and-drop builder. Every submission creates or updates a Salesforce record, with no external callouts.</p>
                             <div class="imp-ts-card-actions">
-                                <a href="/products/smart-forms-surveys.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Smart Forms and Surveys">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                                <a href="/products/smart-forms-surveys/" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Smart Forms and Surveys">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                                 <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=852a8a41-e28c-4dac-a90a-9c8a16a1054d" target="_blank" rel="noopener" class="imp-ts-mini-app" aria-label="Get Smart Forms and Surveys on the Salesforce AppExchange">Get App</a>
                             </div>
                         </div>
@@ -120,11 +120,11 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <span class="imp-ts-kicker">Responses, straight into Salesforce.</span>
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/products/google-form-auto-sync.html">Google Form Auto Sync</a>
+                                <a href="/products/google-form-auto-sync/">Google Form Auto Sync</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Every Google Form response becomes a Salesforce record in real time. No Zapier, no middleware and no third-party server in the path.</p>
                             <div class="imp-ts-card-actions">
-                                <a href="/products/google-form-auto-sync.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Google Form Auto Sync">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                                <a href="/products/google-form-auto-sync/" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Google Form Auto Sync">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                                 <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=b493b297-f6c4-41ad-b1b3-6ca48a2585bb" target="_blank" rel="noopener" class="imp-ts-mini-app" aria-label="Get Google Form Auto Sync on the Salesforce AppExchange">Get App</a>
                             </div>
                         </div>
@@ -137,11 +137,11 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <span class="imp-ts-kicker">Import smarter. Map faster.</span>
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader</a>
+                                <a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">100% native CSV imports with upserts, dynamic lookup matching, automatic field mapping and row-level error reporting, without leaving Salesforce.</p>
                             <div class="imp-ts-card-actions">
-                                <a href="/products/smart-lookup-data-loader.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Smart Lookup Data Loader">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                                <a href="/products/smart-lookup-data-loader/" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Smart Lookup Data Loader">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                                 <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=f020d7cb-6467-4dcc-adda-c1ce6c620257" target="_blank" rel="noopener" class="imp-ts-mini-app" aria-label="Get Smart Lookup Data Loader on the Salesforce AppExchange">Get App</a>
                             </div>
                         </div>
@@ -154,11 +154,11 @@ scriptBodyClass: font-sans antialiased text-slate-800
                         <div class="imp-p-6 imp-flex imp-flex-col imp-flex-grow">
                             <span class="imp-ts-kicker">Why can this user see that?</span>
                             <h3 class="imp-text-xl imp-font-bold imp-text-slate-900 imp-mb-3 imp-hover:text-brand-600 imp-transition imp-leading-tight">
-                                <a href="/products/who-sees-what.html">Who Sees What</a>
+                                <a href="/products/who-sees-what/">Who Sees What</a>
                             </h3>
                             <p class="imp-text-slate-500 imp-text-sm imp-mb-4 imp-flex-grow imp-leading-relaxed">Pick any user and see every object, field and record they can access, with the exact profile, permission set or sharing rule that granted it. Read-only.</p>
                             <div class="imp-ts-card-actions">
-                                <a href="/products/who-sees-what.html" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Who Sees What">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                                <a href="/products/who-sees-what/" class="imp-text-brand-600 imp-font-semibold imp-text-sm imp-flex imp-items-center imp-gap-2 imp-hover:text-brand-800 imp-transition" aria-label="Learn more about Who Sees What">Learn More <svg class="imp-svgi imp-text-xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
                                 <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=dc0aa216-dbed-49e5-86e0-542869f8dc26" target="_blank" rel="noopener" class="imp-ts-mini-app" aria-label="Get Who Sees What on the Salesforce AppExchange">Get App</a>
                             </div>
                         </div>
@@ -226,4 +226,4 @@ scriptBodyClass: font-sans antialiased text-slate-800
 </footer>
 </div>
 
-<script type="application/ld+json" id="ts-schema">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://twinstack.net/products","name":"Salesforce Products","url":"https://twinstack.net/products","description":"Free, 100% native Salesforce apps from TwinStack: Smart Forms & Surveys, Google Form Auto Sync, Smart Lookup Data Loader and Who Sees What, built to run entirely inside your org.","isPartOf":{"@id":"https://twinstack.net/#website"},"publisher":{"@id":"https://twinstack.net/#organization"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://twinstack.net/products/smart-forms-surveys","name":"Smart Forms & Surveys"},{"@type":"ListItem","position":2,"url":"https://twinstack.net/products/google-form-auto-sync","name":"Google Form Auto Sync"},{"@type":"ListItem","position":3,"url":"https://twinstack.net/products/smart-lookup-data-loader","name":"Smart Lookup Data Loader"},{"@type":"ListItem","position":4,"url":"https://twinstack.net/products/who-sees-what","name":"Who Sees What"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://twinstack.net/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://twinstack.net/products"}]}]}</script>
+<script type="application/ld+json" id="ts-schema">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://twinstack.net/products","name":"Salesforce Products","url":"https://twinstack.net/products","description":"Free, 100% native Salesforce apps from TwinStack: Smart Forms & Surveys, Google Form Auto Sync, Smart Lookup Data Loader and Who Sees What, built to run entirely inside your org.","isPartOf":{"@id":"https://twinstack.net/#website"},"publisher":{"@id":"https://twinstack.net/#organization"},"mainEntity":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"https://twinstack.net/products/smart-forms-surveys/","name":"Smart Forms & Surveys"},{"@type":"ListItem","position":2,"url":"https://twinstack.net/products/google-form-auto-sync/","name":"Google Form Auto Sync"},{"@type":"ListItem","position":3,"url":"https://twinstack.net/products/smart-lookup-data-loader/","name":"Smart Lookup Data Loader"},{"@type":"ListItem","position":4,"url":"https://twinstack.net/products/who-sees-what/","name":"Who Sees What"}]}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://twinstack.net/"},{"@type":"ListItem","position":2,"name":"Products","item":"https://twinstack.net/products"}]}]}</script>

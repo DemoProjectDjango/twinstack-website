@@ -116,7 +116,7 @@ scriptBodyClass: font-sans antialiased text-slate-800
                 </p>
                 <h2 id="why-not-happening">2. Why verification had not been happening</h2>
                 <p>
-                    The organisation's Salesforce access model is more complex than average for its size, because Nonprofit Cloud with <a href="/blog/salesforce-person-accounts-access.html">Person Accounts enabled</a> means client records are governed by both Account-side and Contact-side permission configurations simultaneously, in addition to the standard profile, permission set, role hierarchy and sharing rule layers.
+                    The organisation's Salesforce access model is more complex than average for its size, because Nonprofit Cloud with <a href="/products/who-sees-what/blogs/salesforce-person-accounts-access.html">Person Accounts enabled</a> means client records are governed by both Account-side and Contact-side permission configurations simultaneously, in addition to the standard profile, permission set, role hierarchy and sharing rule layers.
                 </p>
                 <p>
                     Confirming one departed employee's full effective access, across all of that, by hand, was estimated by the admin at 45 minutes to an hour per person, given the added complexity of the dual object model. Eleven departures over the relevant period meant roughly eight to eleven hours of investigation to complete the check the funder was asking about, on top of existing programme, IT and finance responsibilities.
@@ -125,7 +125,7 @@ scriptBodyClass: font-sans antialiased text-slate-800
                 <p class="imp-text-sm imp-text-slate-500 imp-italic">Every client record carried two permission models to reconcile, not one.</p>
                 <h2 id="what-was-checked">3. What was checked</h2>
                 <p>
-                    The admin installed <a href="/blog/what-is-who-sees-what.html">Who Sees What</a>, a free native permission inspector, and worked through the list of eleven employees who had left the organisation in the previous eighteen months, checking each one's current effective access.
+                    The admin installed <a href="/products/who-sees-what/blogs/what-is-who-sees-what.html">Who Sees What</a>, a free native permission inspector, and worked through the list of eleven employees who had left the organisation in the previous eighteen months, checking each one's current effective access.
                 </p>
                 <p>
                     For each departed employee, the check confirmed: whether the user record was deactivated, whether any permission set or permission set group assignment remained active, whether any manual share existed on a client or case record naming that user directly, and whether role hierarchy position, if the account were ever reactivated, would grant any residual visibility.
@@ -174,7 +174,7 @@ scriptBodyClass: font-sans antialiased text-slate-800
                     <strong>Build the offboarding checklist to reference outcomes, not actions.</strong> The original checklist said "remove permission sets," an action, rather than "confirm zero residual access," an outcome. A checklist framed around confirming the outcome would have prompted checking permission set groups and manual shares even without prior knowledge that those specific mechanisms existed.
                 </p>
                 <p>
-                    <strong>Schedule a recurring check rather than treating this as a one-time response to the funder.</strong> A quarterly recurring check of the past quarter's departures would catch the same class of gap on a predictable schedule rather than depending on an external prompt to surface it. <a href="/blog/salesforce-onboarding-offboarding-access-verification.html">A fuller checklist for onboarding and offboarding verification is covered here</a>.
+                    <strong>Schedule a recurring check rather than treating this as a one-time response to the funder.</strong> A quarterly recurring check of the past quarter's departures would catch the same class of gap on a predictable schedule rather than depending on an external prompt to surface it. <a href="/products/who-sees-what/blogs/salesforce-onboarding-offboarding-access-verification.html">A fuller checklist for onboarding and offboarding verification is covered here</a>.
                 </p>
                 <p class="imp-text-sm imp-text-slate-500 imp-italic">Who Sees What is built and maintained by TwinStack Solutions, a Salesforce partner. Questions: <a href="mailto:info@twinstack.net">info@twinstack.net</a></p>
                 <div class="imp-bg-brand-50 imp-border imp-border-brand-200 imp-rounded-xl imp-p-6 imp-mt-12">

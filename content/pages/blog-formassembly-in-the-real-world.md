@@ -1,7 +1,7 @@
 ---
 title: "FormAssembly in the Real World: Lessons from Live Salesforce Projects"
 slug: blog-formassembly-in-the-real-world
-url: /blog/formassembly-in-the-real-world.html
+url: /products/smart-forms-surveys/blogs/formassembly-in-the-real-world.html
 order: 50
 description: A practical look at FormAssembly, the form platform that connects web forms to Salesforce, with honest pros and cons from live Salesforce projects.
 date: 2026-11-16
@@ -290,12 +290,12 @@ tags:
     <h2 class="text-2xl font-semibold tracking-tight text-zinc-950 sm:text-3xl">Related reading</h2>
     <ul class="mt-6 grid gap-4 sm:grid-cols-2">
       <li>
-        <a href="/blog/native-salesforce-forms.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:border-brand/40 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+        <a href="/products/smart-forms-surveys/blogs/native-salesforce-forms.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:border-brand/40 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
           <span>Why Native Salesforce Forms Beat a Form Tool Plus a Connector</span>
         </a>
       </li>
       <li>
-        <a href="/blog/secure-public-salesforce-forms.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:border-brand/40 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+        <a href="/products/smart-forms-surveys/blogs/secure-public-salesforce-forms.html" class="flex h-full min-h-11 items-start justify-between gap-3 rounded-2xl border border-zinc-200 bg-white p-5 font-semibold leading-snug text-zinc-950 shadow-sm transition hover:border-brand/40 hover:text-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
           <span>Public Salesforce Forms Without the Anxiety: Spam, Uploads and Guest Access</span>
         </a>
       </li>

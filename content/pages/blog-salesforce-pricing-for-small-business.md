@@ -99,7 +99,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <ol>
 <li>Write down the three outcomes that justify the purchase. Everything else waits for phase two.</li>
 <li>Clean your spreadsheets before anyone touches Salesforce. Duplicates and inconsistent names cost hours.</li>
-<li>Use a repeatable import tool for ongoing loads. Our free <a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader</a> handles upserts and lookup matching natively.</li>
+<li>Use a repeatable import tool for ongoing loads. Our free <a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader</a> handles upserts and lookup matching natively.</li>
 <li>Pick a fixed scope and a go-live date, then say no to additions until after launch.</li>
 <li>Budget a small support block from day one. A system with no owner decays quickly.</li>
 </ol>

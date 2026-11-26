@@ -101,7 +101,7 @@ scriptRemoved: "#navbar #mobile-menu-btn #mobile-menu #close-menu-btn .fixed .z-
 <li><strong>Do not rebuild everything.</strong> Drop unused fields, reports and automations before you scope.</li>
 <li><strong>Phase it.</strong> Fundraising first, programmes second, portals third.</li>
 <li><strong>Clean data in-house beforehand.</strong> Staff who know the donors are better at deduplication than any contractor.</li>
-<li><strong>Use free, native tools for repeated loads.</strong> Rehearsing a migration nine times should not cost nine times as much. Our free <a href="/products/smart-lookup-data-loader.html">Smart Lookup Data Loader</a> resolves lookups by name or code during import.</li>
+<li><strong>Use free, native tools for repeated loads.</strong> Rehearsing a migration nine times should not cost nine times as much. Our free <a href="/products/smart-lookup-data-loader/">Smart Lookup Data Loader</a> resolves lookups by name or code during import.</li>
 <li><strong>Ask funders.</strong> Implementation suits a capacity-building grant.</li>
 </ol>
 <p>To price your own organisation, run the <a href="/cost-estimator.html">cost estimator</a>, choose nonprofit, and add data migration.</p>
