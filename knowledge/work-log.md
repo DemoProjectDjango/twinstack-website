@@ -1,57 +1,6 @@
 # Work log
 
 Written automatically: one line per change Claude made to this site that was kept, oldest first. Claude reads this before every request so new work stays consistent with earlier work. Older lines move to knowledge/archive/. Standing decisions belong in knowledge/notes.md, not here.
-- 2026-11-17 · assistant:write-file · content/pages/blog-survey-school-comparison.md · Create related blog 5, "How One Program Used Survey Data to Decide Which Schools Need Support First", in the same design as the other survey blogs, with an emp…
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-data-to-action.md · Add a "Related reading" section at the bottom of the main survey blog linking to all five related posts.
-- 2026-11-17 · assistant:edit-file · content/pages/blog.md · Add the six survey dashboard posts to the top of the Blog page under Guides.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-overview-dashboard.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-topics-and-questions.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-growth-during-the-year.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-year-over-year.md · Add a "Related reading" section at the bottom of this blog linking to the main blog and the other related posts.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-data-to-action.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-overview-dashboard.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-topics-and-questions.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-growth-during-the-year.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-year-over-year.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-survey-school-comparison.md · Remove the sample image address from a hidden note so it no longer counts as a broken link.
-- 2026-11-17 · assistant:create-page · content/pages/case-studies-agvantage-claude-bid-agents.md · Create the AgVantage Claude bid agents case study page, to be filled from your HTML file.
-- 2026-11-17 · assistant:create-page · content/pages/case-studies-ai-excel-data-extractor.md · Create the Excel Data Extractor case study page.
-- 2026-11-17 · assistant:create-page · content/pages/case-studies-warehouse-label-capture-claude.md · Create the warehouse label capture case study page.
-- 2026-11-17 · assistant:create-page · content/pages/case-studies-claude-website-builder.md · Create the Claude website builder case study page.
-- 2026-11-17 · assistant:create-page · content/pages/case-studies-twintrack-claude-code.md · Create the TwinTrack Claude Code case study page.
-- 2026-11-17 · page:convert · content/pages/case-studies-agvantage-claude-bid-agents.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
-  - Replaced the page body with the original agvantage-claude-bid-agents.html markup and styling, kept as-is with no text changes.
-  - Added a `stylesheet` field pointing to /assets/css/imported/case-studies-agvantage-claude-bid-agents.css, which holds the page's 300 scoped CSS rules.
-  - Set frontmatter title, description, metaTitle, metaDescription and focusKeyword to the new AgVantage Claude agents copy.
-  - Added `hideCta`, `ownChrome`, `scriptHtmlClass`, `scriptBodyClass` and a `scripts` list (inline-1 in head, deferred ts-analytics.js, inline-2 in body).
-- 2026-11-17 · page:convert · content/pages/case-studies-ai-excel-data-extractor.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
-  - Replaced the page body with the HTML of ai-excel-data-extractor.html, keeping its own markup and styling intact.
-  - Moved the page's 300 CSS rules to assets/css/imported/case-studies-ai-excel-data-extractor.css and linked it via the stylesheet field.
-  - Set title, description, metaTitle, metaDescription and focusKeyword; kept slug, url and order, dropped the old content fields.
-  - Added ownChrome, hideCta, scriptHtmlClass/scriptBodyClass and three script entries, including /js/ts-analytics.js.
-- 2026-11-17 · page:convert · content/pages/case-studies-warehouse-label-capture-claude.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
-  - Replaced the page body with the HTML of warehouse-label-capture-claude.html copied as-is, own styling intact.
-  - Moved its 300 CSS rules into assets/css/imported/case-studies-warehouse-label-capture-claude.css, scoped to the page and linked via the stylesheet field.
-  - Set title, description, metaTitle, metaDescription, focusKeyword, hideCta, ownChrome, scriptHtmlClass and scriptBodyClass in frontmatter.
-  - Added three script entries (two imported inline scripts plus /js/ts-analytics.js) and removed the old body and content fields.
-- 2026-11-17 · page:convert · content/pages/case-studies-claude-website-builder.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
-  - Replaced the page body with the HTML of claude-website-builder.html copied as-is, served at /case-studies/claude-website-builder.html.
-  - Saved the page's 300 CSS rules to /assets/css/imported/case-studies-claude-website-builder.css and set it as the stylesheet.
-  - Set frontmatter title, description, metaTitle, metaDescription and focusKeyword "Claude website builder"; kept slug, url and order.
-  - Added hideCta, ownChrome, three script entries (two imported inline, ts-analytics) and html/body classes scroll-smooth, font-sans antialiased text-slate-800.
-- 2026-11-17 · page:convert · content/pages/case-studies-twintrack-claude-code.md · Keep the page's own HTML and CSS exactly as it is. Use the site's own header and footer, not the ones in the file. Keep the title, description and schema from…
-  - Replaced the page body with the twintrack-claude-code.html HTML copied as-is, keeping its own markup and styling.
-  - Saved its 300 CSS rules scoped to this page as assets/css/imported/case-studies-twintrack-claude-code.css, linked via the `stylesheet` field.
-  - Set `title` to "TwinTrack: Building a Business Platform with Claude Code"; rewrote `description` and added `metaTitle`, `metaDescription`, `focusKeyword`.
-  - Added two imported inline scripts and `/js/ts-analytics.js` to `scripts`; set `hideCta`, `ownChrome`, `scriptHtmlClass` and `scriptBodyClass`.
-- 2026-11-17 · assistant:edit-file · content/pages/case-studies.md · Add the "AI & Claude Implementation" filter button and the five new Claude case study cards at the top of the case studies grid.
-- 2026-11-17 · assistant:edit-file · content/pages/blog.md · Add the Salesforce Voice and Tableau filter buttons and put the 12 Voice and Tableau post cards back on the Blog page, after the Smart Forms and Surveys cards.
-- 2026-11-17 · assistant:edit-file · content/pages/blog-salesforce-voice-amazon-connect-features.md · Change the author to Ishtiaq Hossen, Salesforce Developer.
-- 2026-11-19 · github-changes · the site's repository · Brought in changes published elsewhere: Update Contact TwinStack Solutions
-- 2026-11-19 · github-changes · the site's repository · Brought in changes published elsewhere: Update Contact TwinStack Solutions and AI notes about your site
-- 2026-11-19 · assistant:edit-file · content/pages/blog.md · Show the new cover pictures on the six survey cards and the FormAssembly card in the Blog list.
-- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-data-to-action.md · Put the cover picture at the top of the post.
-- 2026-11-19 · assistant:edit-file · content/pages/blog-survey-overview-dashboard.md · Put the cover picture at the top of the post.
 - 2026-11-19 · assistant:edit-file · content/pages/blog-survey-topics-and-questions.md · Put the cover picture at the top of the post.
 - 2026-11-19 · assistant:edit-file · content/pages/blog-survey-growth-during-the-year.md · Put the cover picture at the top of the post.
 - 2026-11-19 · assistant:edit-file · content/pages/blog-survey-year-over-year.md · Put the cover picture at the top of the post.
@@ -89,3 +38,31 @@ Written automatically: one line per change Claude made to this site that was kep
   - Added an at-a-glance stat band, challenge and solution sections, four numbered process steps, a judgement-calls section and a results section.
   - Added a closing call-to-action band with "Talk to Us" link to /contact.html, plus description, metaTitle, metaDescription and focusKeyword frontmatter.
 - 2026-11-25 · github-changes · the site's repository · Brought in changes published elsewhere: Update the site's tools from the template
+- 2026-11-26 · owner:new-page · content/pages/products-who-sees-what-blogs.md · The owner made a page at /products/who-sees-what/blogs/
+- 2026-11-26 · page:edit · content/pages/products-who-sees-what-blogs.md · This is a new, empty page. Write it from scratch. Create a listing page at /products/who-sees-what/blogs/ titled "Who Sees What Articles" showing ALL blog post…
+  - Set frontmatter fields description, metaTitle, metaDescription, focusKeyword and stylesheet /assets/css/imported/blog.css.
+  - Replaced the empty placeholder with a dark hero: "Back to Who Sees What" and "Back to all blog posts" links, a "Who Sees What" badge, the title and the subline.
+  - Added an "All articles" card grid of Who Sees What posts, using blog.css card markup and classes, 1/2/3 columns responsive.
+  - Added a closing call-to-action band linking to the AppExchange listing in a new tab, plus the site footer.
+- 2026-11-26 · owner:new-page · content/pages/products-google-form-auto-sync-blogs.md · The owner made a page at /products/google-form-auto-sync/blogs/
+- 2026-11-26 · page:edit · content/pages/products-google-form-auto-sync-blogs.md · This is a new, empty page. Write it from scratch. Create a listing page at /products/google-form-auto-sync/blogs/ titled "Google Form Auto Sync Articles" showi…
+  - Created the page at /products/google-form-auto-sync/blogs/ with a dark hero: "Google Form Auto Sync" badge, the title, subline and back links to the product page and /blog.html.
+  - Added an "All articles" card grid of the three product blog posts (image, title, excerpt, link), 1 column on phones, 2 on tablets, 3 on desktop, with no topic filters.
+  - Added a call-to-action band linking to /products/google-form-auto-sync/ ("View the product") and the site footer.
+  - Set frontmatter description, metaTitle, metaDescription, focusKeyword and stylesheet: /assets/css/imported/blog.css.
+- 2026-11-26 · owner:new-page · content/pages/products-smart-lookup-data-loader-blogs.md · The owner made a page at /products/smart-lookup-data-loader/blogs/
+- 2026-11-26 · page:edit · content/pages/products-smart-lookup-data-loader-blogs.md · This is a new, empty page. Write it from scratch. Create a listing page at /products/smart-lookup-data-loader/blogs/ titled "Smart Lookup Data Loader Articles"…
+  - Replaced the empty page body with a dark hero titled "Smart Lookup Data Loader Articles", a "Smart Lookup Data Loader" badge and the subline "Guides on importing CSV data into Salesforce".
+  - Added "Back to Smart Lookup Data Loader" and "Back to all blog posts" pill links at the top of the hero.
+  - Added an "All articles" card grid of Smart Lookup Data Loader posts (3 cards copied with image, title, excerpt and link), 1 column on phones to 3 on desktop.
+  - Set frontmatter fields description, metaTitle, metaDescription, focusKeyword ("salesforce csv import") and stylesheet /assets/css/imported/blog.css.
+- 2026-11-26 · owner:new-page · content/pages/products-smart-forms-surveys-blogs.md · The owner made a page at /products/smart-forms-surveys/blogs/
+- 2026-11-26 · page:edit · content/pages/products-smart-forms-surveys-blogs.md · This is a new, empty page. Write it from scratch. Create a listing page at /products/smart-forms-surveys/blogs/ titled "Smart Forms & Surveys Articles" showing…
+  - Added frontmatter fields: description, metaTitle, metaDescription, focusKeyword and stylesheet /assets/css/imported/blog.css.
+  - Replaced the empty body with a dark hero holding a "Smart Forms & Surveys" badge, the page title and the subline "Guides on building native Salesforce forms and surveys".
+  - Added two pill links at the top of the hero: "Back to Smart Forms & Surveys" and "Back to all blog posts".
+  - Added an "All articles" card grid with the four Smart Forms & Surveys blog cards (1, 2, 3 columns by breakpoint) and a closing call-to-action band.
+- 2026-11-26 · assistant:edit-file · content/pages/products-who-sees-what.md · Point the Who Sees What "view all" button, Blog link and footer link to its own articles page.
+- 2026-11-26 · assistant:edit-file · content/pages/products-google-form-auto-sync.md · Point the Google Form Auto Sync "view all" button, Blog link and footer link to its own articles page.
+- 2026-11-26 · assistant:edit-file · content/pages/products-smart-lookup-data-loader.md · Point the Smart Lookup Data Loader "view all" button, Blog link and footer link to its own articles page.
+- 2026-11-26 · assistant:edit-file · content/pages/products-smart-forms-surveys.md · Point the Smart Forms & Surveys "view all" button to its own articles page.
