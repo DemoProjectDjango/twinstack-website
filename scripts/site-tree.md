@@ -17,7 +17,3 @@ A path without an extension (`- thank-you`) is the page `thank-you.html`, a path
 - blog/index.html
 - blog/salesforce-flow-best-practices.html
 - case-studies/agvantage-bid-agents-landing/index.html
-- products/who-sees-what/blogs/index.html
-- products/google-form-auto-sync/blogs/index.html
-- products/smart-lookup-data-loader/blogs/index.html
-- products/smart-forms-surveys/blogs/index.html

@@ -1,7 +1,7 @@
 // Deep links into a blog filter, e.g. /blog#cost-estimator or /blog?filter=cost-estimator
 (function(){
   var MAP={"cost-estimator":"cost","cost":"cost","pricing":"cost","guides":"guide","productivity":"productivity","integration":"integration","tips":"tips",
-           "google-form-auto-sync":"gfas","gfas":"gfas","who-sees-what":"wsw","wsw":"wsw","smart-lookup-data-loader":"sldl","sldl":"sldl"};
+           "google-form-auto-sync":"gfas","gfas":"gfas","who-sees-what":"wsw","wsw":"wsw","smart-lookup-data-loader":"sldl","sldl":"sldl","smart-forms-surveys":"sfs","sfs":"sfs"};
   function apply(){
     var q=new URLSearchParams(location.search).get("filter")||location.hash.replace("#","");
     var c=MAP[(q||"").toLowerCase()]; if(!c)return;

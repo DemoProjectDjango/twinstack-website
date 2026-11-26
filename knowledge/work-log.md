@@ -66,3 +66,31 @@ Written automatically: one line per change Claude made to this site that was kep
 - 2026-11-26 · assistant:edit-file · content/pages/products-google-form-auto-sync.md · Point the Google Form Auto Sync "view all" button, Blog link and footer link to its own articles page.
 - 2026-11-26 · assistant:edit-file · content/pages/products-smart-lookup-data-loader.md · Point the Smart Lookup Data Loader "view all" button, Blog link and footer link to its own articles page.
 - 2026-11-26 · assistant:edit-file · content/pages/products-smart-forms-surveys.md · Point the Smart Forms & Surveys "view all" button to its own articles page.
+- 2026-11-26 · assistant:edit-file · assets/js/imported/blog/inline-3.js · Let the Blog page open pre-filtered for Smart Forms & Surveys.
+- 2026-11-26 · assistant:edit-file · content/pages/products-who-sees-what.md · Send Who Sees What blog links to the Blog page filtered to that product.
+- 2026-11-26 · assistant:edit-file · content/pages/products-google-form-auto-sync.md · Send Google Form Auto Sync blog links to the Blog page filtered to that product.
+- 2026-11-26 · assistant:edit-file · content/pages/products-smart-lookup-data-loader.md · Send Smart Lookup Data Loader blog links to the Blog page filtered to that product.
+- 2026-11-26 · assistant:edit-file · content/pages/products-smart-forms-surveys.md · Send Smart Forms & Surveys "view all" to the Blog page filtered to that product.
+- 2026-11-26 · assistant:delete-page · content/pages/products-who-sees-what-blogs.md · Remove the separate Who Sees What articles page; the Blog page filter replaces it.
+- 2026-11-26 · assistant:delete-page · content/pages/products-google-form-auto-sync-blogs.md · Remove the separate Google Form Auto Sync articles page; the Blog page filter replaces it.
+- 2026-11-26 · assistant:delete-page · content/pages/products-smart-lookup-data-loader-blogs.md · Remove the separate Smart Lookup Data Loader articles page; the Blog page filter replaces it.
+- 2026-11-26 · assistant:delete-page · content/pages/products-smart-forms-surveys-blogs.md · Remove the separate Smart Forms & Surveys articles page; the Blog page filter replaces it.
+- 2026-11-26 · page:edit · content/pages/products-who-sees-what.md · Change ONLY the related-articles section near the bottom (above the footer) of this page; keep everything else exactly as is. Restyle its post cards to look ex…
+  - Replaced the related-articles post cards in the `#blog` section with new `imp-wsw-card` articles: pill label, cover image, title, excerpt and "Read More →".
+  - Added scoped CSS inside the section styling white rounded cards (slate border, soft shadow, hover lift) instead of relying on blog.css.
+  - Set the cards in a responsive grid with equal heights: 1 column on phones, 2 on tablets, 3 on desktop.
+  - Kept the "Notes from the team." heading and the centered "View all Who Sees What articles →" button linking to /blog.html?filter=who-sees-what.
+- 2026-11-26 · page:edit · content/pages/products-google-form-auto-sync.md · Change ONLY the related-articles section near the bottom (above the footer) of this page; keep everything else exactly as is. Restyle its post cards to look ex…
+  - Added a scoped `<style>` block inside the `#blog` section defining the `imp-gfas-card` white rounded card, 224px cover image, category pill and hover lift.
+  - Replaced the three post cards with `imp-gfas-card` markup: image link, white category pill (Guide, Architecture, Security), xl title link, grey excerpt and brand "Read More →" link.
+  - Changed the card grid to `imp-gfas-grid` with 1 column on phones, 2 on tablets and 3 on desktop, using stretch cells for equal-height cards.
+  - Kept the section heading and the centered "View all Google Form Auto Sync articles →" button below the cards, linking to /blog.html?filter=google-form-auto-sync.
+- 2026-11-26 · page:edit · content/pages/products-smart-lookup-data-loader.md · Change ONLY the related-articles section near the bottom (above the footer) of this page; keep everything else exactly as is. Restyle its post cards to look ex…
+  - Rebuilt the related-articles grid above the footer as three cards, each with a 224px cover image, white category pill, bold title link, grey excerpt and a "Read More →" link.
+  - Added scoped `<style>` inside the `#blog` section for the new card look (rounded white card, slate border, soft shadow, hover lift) and a 1/2/3-column responsive grid with equal-height cards.
+  - Kept the "Notes from the team." heading and the centered "View all Smart Lookup Data Loader articles →" button linking to /blog.html?filter=smart-lookup-data-loader in the same tab.
+- 2026-11-26 · page:edit · content/pages/products-smart-forms-surveys.md · Change ONLY the "Related reading" section (id="blog", near the bottom above the footer); keep everything else exactly as is. Its three cards currently show Goo…
+  - Replaced the three "Related reading" cards (Google Form Auto Sync posts) with three Smart Forms & Surveys posts, using their titles and excerpts from blog.md.
+  - Restyled the cards as white rounded-xl tiles with a 224px cover image, a white "Smart Forms and Surveys" pill, bold title link, grey excerpt and brand-coloured "Read More →" link.
+  - Added scoped CSS inside the section: a responsive grid of 1/2/3 columns with equal-height cards, hover lift and reduced-motion handling.
+  - Kept the section heading and the centered "View all Smart Forms & Surveys articles →" button as they were.
