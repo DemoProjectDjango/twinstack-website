@@ -30,6 +30,8 @@ knowledge/           what Claude knows from previous work: owner's notes + autom
 dist/                generated output; never edit, never commit
 ```
 
+**Starter templates are built from this template.** twinstack-web's new-site gallery (`server/kits/`) shows each template as this site built with its pages, and copies those pages into new sites. They rely on the header and footer partials, `base.html`, `styles/main.css`, `{{ site.* }}` in page bodies (`site.name`, `site.description`, `site.contact.*`), `{{# if }}`, and `STARTER_TEXT` in `scripts/lib/design-rules.js` never matching their text. After a change to any of those, run `npm --prefix ../Twinstack-web/server run kits:build` (it builds and checks every template, failing on any check warning) and commit the new previews in twinstack-web; its kit test fails until you do.
+
 ## Commands
 
 ```bash
