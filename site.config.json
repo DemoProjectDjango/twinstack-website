@@ -112,14 +112,5 @@
   "analytics": {
     "endpoint": "https://api.twinstack.net/api/collect",
     "key": "wfevtEncBYnrOIYWPxc6uYNI"
-  },
-  "agent": {
-    "endpoint": "https://api.twinstack.net/api/agent",
-    "key": "PrB9JNS9S63WQyyO7BeueoYU",
-    "name": "Site helper",
-    "greeting": "Hi! Can I help you find something?",
-    "position": "left",
-    "icon": "sparkle",
-    "animation": "bounce"
   }
 }
